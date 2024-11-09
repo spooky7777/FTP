@@ -4,197 +4,187 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #hero {
-    z-index: 1;
-    position: relative;
-    /* prevents overflow from the lines extending past the screen width */
+  #hero-1159 {
+    /* 200px - 300px - leaving extra space for the navigation */
+    padding: clamp(12.5rem, 31.95vw, 18.75rem) 1rem 0;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
     overflow: hidden;
-    /* changes on tablet */
-    padding: 0 1rem;
-    padding-bottom: 6.25rem;
-    font-family: "Roboto", "Arial", sans-serif;
-    /* Centers button */
-    text-align: center;
-  }
-  #hero .cs-picture {
-    z-index: -2;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 100%;
-    /* Background Image */
-    width: 100%;
-  }
-  #hero .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Makes image act like a background-image */
-    object-fit: cover;
-  }
-  #hero .cs-picture:before {
+    position: relative;
     z-index: 1;
+  }
+  #hero-1159 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #hero-1159 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    max-width: 39.375rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #hero-1159 .cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+  #hero-1159 .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 51.8125rem;
+    margin: 0 auto 1rem 0;
+    color: #fff;
+    position: relative;
+  }
+  #hero-1159 .cs-text {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 1.95vw, 1.25rem);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    /* 464px - 622px */
+    max-width: clamp(29rem, 60vw, 38.785rem);
+    margin: 0 0 2.5rem 0;
+    color: #fff;
+  }
+  #hero-1159 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #hero-1159 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #hero-1159 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #hero-1159 .cs-picture {
+    /* 340px - 742px */
+    height: clamp(21.25rem, 68vw, 46.375rem);
+    width: auto;
+    max-width: 35em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  #hero-1159 .cs-picture img {
+    height: 100%;
+    width: auto;
+  }
+  #hero-1159 .cs-graphic {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+  #hero-1159 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    /* Black Color Overlay */
+    z-index: -2;
+  }
+  #hero-1159 .cs-background:before {
+    /* Overlay */
     content: "";
-    opacity: 0.7;
-    display: block;
-    background: #000;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    opacity: 0.84;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
     /* prevents the cursor from interacting with it */
     pointer-events: none;
   }
-  #hero .cs-container {
-    position: relative;
-    margin: auto;
-    max-width: 80em;
-    width: 100%;
-    /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
-    /* 144px - 280px - leaving extra space for the navigation */
-    /* changes on tablet */
-    padding: clamp(9em, 25.95vw, 17.5em) 0;
-  }
-  #hero .cs-container:before {
+  #hero-1159 .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
-    /* Left Line */
-    content: "";
-    opacity: 1;
-    display: block;
-    background: -moz-linear-gradient(top, rgba(250, 251, 252, 0.5) 0%, rgba(250, 251, 252, 0) 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(250, 251, 252, 0.5) 0%, rgba(250, 251, 252, 0) 100%);
-    /* Chrome10-25,Safari5.1-6 */
     height: 100%;
-    width: 1px;
-  }
-  #hero .cs-flex-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    margin: auto;
-    /* 60px - 220px */
-    margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
-    /* 464px - 562px */
-    max-width: clamp(29em, 60vw, 35.125em);
-    width: 80vw;
-    box-sizing: border-box;
-  }
-  #hero .cs-topper {
-    margin-bottom: 1rem;
-    color: var(--primary);
-    text-align: center;
-  }
-  #hero .cs-title {
     width: 100%;
-    color: var(--bodyTextColorWhite);
-    text-align: center;
-  }
-  #hero .cs-text {
-    /* 32px - 40px */
-    margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-    /* 40px - 48px */
-    margin-bottom: clamp(2.5rem, 4vw, 3rem);
-    color: var(--bodyTextColorWhite);
-    text-align: center;
-  }
-  #hero .cs-button-solid {
-    margin-bottom: 1rem;
-    height: initial;
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
-  }
-  #hero .cs-button-transparent {
-    z-index: 1;
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--bodyTextColorWhite);
-    margin: 0 0.5rem;
-    background-color: transparent;
-    /* 46px - 56px */
-    height: clamp(2.875em, 5.5vw, 3.5em);
-    width: 11.25rem;
-    box-sizing: border-box;
-    padding: 0;
-    text-decoration: none;
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
-    font-weight: 700;
-    color: #fff;
-  }
-  #hero .cs-button-transparent .cs-img {
-    display: block;
-    margin-right: 0.75rem;
-  }
-  #hero .cs-button-transparent:before {
-    z-index: -1;
-    position: absolute;
-    /* so it sits on top of the border */
-    top: -1px;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    content: "";
-    opacity: 1;
-    /* this is what creates the grow affect on hover */
-    transform: scaleX(0);
-    display: block;
-    background: #000;
-    transition: transform 0.3s;
-    transform-origin: left;
-  }
-  #hero .cs-button-transparent:hover:before {
-    transform: scaleX(1);
+    object-fit: cover;
+    /* makes the top of the image start at the top of the parent */
+    object-position: top;
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #hero {
-    /* 32px - 40px */
-    padding: 0 clamp(2em, 5vw, 2.5em);
+  #hero-1159 {
+    /* 150px - 300px */
+    padding-bottom: clamp(9.375rem, 22vw, 18.75rem);
   }
-  #hero .cs-container {
-    padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+  #hero-1159 .cs-container {
+    flex-direction: row;
+    justify-content: flex-start;
   }
-  #hero .cs-container:after {
+  #hero-1159 .cs-content {
+    text-align: left;
+    width: 55%;
+    max-width: 39.375rem;
+    align-items: flex-start;
+  }
+  #hero-1159 .cs-picture {
+    justify-content: flex-start;
     position: absolute;
-    top: 0;
-    right: 0;
-    /* Right Line */
-    content: "";
-    opacity: 1;
-    display: block;
-    background: -moz-linear-gradient(top, rgba(250, 251, 252, 0) 0%, rgba(250, 251, 252, 0.5) 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(250, 251, 252, 0) 0%, rgba(250, 251, 252, 0.5) 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    height: 100%;
-    width: 1px;
-  }
-  #hero .cs-button-solid {
-    margin-right: 1.25rem;
-    margin-bottom: 0;
+    bottom: 0;
+    left: 50%;
   }
 }
-/* Desktop Parallax Effect - 1300px */
-@media only screen and (min-width: 81.25em) {
-  #hero {
-    background: url("/assets/images/landing.jpg");
-    background-position: center;
+/* Large Desktop - 1600px - Prallax Effect */
+@media only screen and (min-width: 100rem) {
+  #hero-1159 .cs-background {
+    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    /* creates parallax effect on background image */
     background-attachment: fixed;
+  }
+  #hero-1159 .cs-background img {
+    display: none;
   }
 }
 /* Dark Mode */
@@ -206,95 +196,1433 @@
 /*-- -------------------------- -->
 <---          Services          -->
 <--- -------------------------- -*/
-/* Mobile */
+/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  .services {
-    z-index: 100;
-    position: relative;
-    border-top: 0.375em solid var(--primary);
-    border-radius: 0.3125em;
-    margin: auto;
-    margin-top: calc(-167 / 16 * 1em);
-    margin-bottom: 3.125em;
-    background: #fff;
-    max-width: 82.5em;
-    width: 90%;
-    padding: 3.125em 1.25em;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+  #services-1191 {
+    padding: var(--sectionPadding);
+    /* prevents padding from affecting height and  */
+    box-sizing: border-box;
   }
-  .services .card {
-    display: block;
-    margin: auto;
-    margin-bottom: 3.125em;
-    max-width: 22.3125em;
+  #services-1191 .cs-container {
+    /* changes to 1440px at desktop */
+    max-width: 58.75rem;
     width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
   }
-  .services .card picture {
+  #services-1191 .cs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+  }
+  #services-1191 .cs-title {
+    max-width: 20ch;
+  }
+  #services-1191 .cs-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+  }
+  #services-1191 .cs-image {
+    width: 100%;
+    max-width: 31.875rem;
+    height: auto;
+    display: block;
+    position: relative;
+  }
+  #services-1191 .cs-image img {
+    width: 100%;
+    height: auto;
+  }
+  #services-1191 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    row-gap: 1rem;
+  }
+  #services-1191 .cs-item {
+    text-align: center;
+    list-style: none;
+    max-width: 23rem;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  #services-1191 .cs-picture {
+    width: 5rem;
+    height: 5rem;
+    box-sizing: border-box;
+    /* prevents border from affecting height and width */
+    background-color: #f7f7f7;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    margin: auto;
-    margin-bottom: 1.4375em;
-    background: var(--primary);
-    height: 5.5em;
-    width: 5.5em;
+    position: relative;
+    /* prevents flexbox from squishing it */
+    flex: none;
   }
-  .services .card picture img {
-    height: 3em;
-    width: 3em;
+  #services-1191 .cs-icon {
+    width: 1.875rem;
+    height: auto;
+    display: block;
   }
-  .services .card h2 {
-    margin-bottom: 0.65em;
-    font-size: 2em;
-    line-height: 1.35em;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-align: center;
-  }
-  .services .card p {
-    opacity: 0.7;
-    width: 100%;
-    line-height: 1.33333333em;
-    text-align: center;
-  }
-  .services .card:last-of-type {
-    margin-bottom: 0;
-  }
-}
-/* Inbetween */
-@media only screen and (min-width: 768px) {
-  .services {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 98%;
-    font-size: min(1.8vw, 1em);
-  }
-  .services .card {
+  #services-1191 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.5em;
     margin: 0;
-    max-width: 20.3125em;
+    margin-bottom: 0.5rem;
+    color: var(--headerColor);
+    text-align: inherit;
   }
-}
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-  .services {
-    padding: 3.125em 5em;
+  #services-1191 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+    text-align: inherit;
   }
-  .services .card {
-    max-width: 22.3125em;
-  }
-}
-/* Dark mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #services {
-    background: var(--medium);
-  }
-  body.dark-mode #services picture {
-    background: var(--primaryDark);
-  }
-  body.dark-mode #services h2 {
-    font-weight: bold;
+  #services-1191 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    font-weight: 700;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
     color: #fff;
+    background-color: var(--primary);
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  #services-1191 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #services-1191 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-1191 .cs-card-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #services-1191 .cs-item {
+    text-align: left;
+    margin: 0;
+    width: 32%;
+    align-items: flex-start;
+  }
+  #services-1191 .cs-image {
+    max-height: 28.125rem;
+  }
+  #services-1191 .cs-image img {
+    width: 100%;
+    height: auto;
+    max-height: 28.125rem;
+    object-fit: contain;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #services-1191 .cs-container {
+    max-width: 90rem;
+  }
+  #services-1191 .cs-image {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #services-1191 .cs-image img {
+    width: auto;
+    height: auto;
+  }
+  #services-1191 .cs-card-group {
+    align-items: flex-start;
+    justify-content: center;
+    /* 180px - 356px */
+    column-gap: clamp(11.25rem, 21vw, 22.25rem);
+    /* 40px - 88px */
+    row-gap: clamp(2.5rem, 8vw, 5.5rem);
+  }
+  #services-1191 .cs-item {
+    width: 32vw;
+    max-width: 26.375rem;
+    flex-direction: row;
+    position: relative;
+  }
+  #services-1191 .cs-item:nth-of-type(odd) {
+    text-align: right;
+  }
+  #services-1191 .cs-item:nth-of-type(odd) .cs-picture {
+    /* sends it to the right in the 2nd position */
+    order: 2;
+  }
+  #services-1191 .cs-item:nth-of-type(3) {
+    /* 90px - 1280px */
+    left: calc(clamp(5.625rem, 8vw, 8rem)*-1);
+  }
+  #services-1191 .cs-item:nth-of-type(4) {
+    /* 90px - 1280px */
+    right: calc(clamp(5.625rem, 8vw, 8rem)*-1);
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #services-1191 .cs-topper {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #services-1191 .cs-text,
+  body.dark-mode #services-1191 .cs-item-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #services-1191 .cs-picture {
+    background-color: var(--medium);
+  }
+  body.dark-mode #services-1191 .cs-icon {
+    /* turns it white */
+    filter: grayscale(1) brightness(1000%);
+  }
+  body.dark-mode #services-1191 .cs-title,
+  body.dark-mode #services-1191 .cs-text,
+  body.dark-mode #services-1191 .cs-h3,
+  body.dark-mode #services-1191 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+  }
+}
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #RPsbs-1163,
+  #RPsbsr-1163 {
+    padding: var(--sectionPadding);
+    /* clips grpahics from causing overflow issues */
+    overflow: hidden;
+  }
+  #RPsbs-1163 .cs-container,
+  #RPsbsr-1163 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #RPsbs-1163 .cs-content,
+  #RPsbsr-1163 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 33.875rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #RPsbs-1163 .cs-text,
+  #RPsbsr-1163 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #RPsbs-1163 .cs-text:last-of-type,
+  #RPsbsr-1163 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #RPsbs-1163 .cs-ul,
+  #RPsbsr-1163 .cs-ul {
+    max-width: 39.375rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    /* clips the bullets to create the half circle */
+    overflow: hidden;
+  }
+  #RPsbs-1163 .cs-li,
+  #RPsbsr-1163 .cs-li {
+    list-style: none;
+    margin: 0 0 0.5rem 0;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+  }
+  #RPsbs-1163 .cs-li:before,
+  #RPsbsr-1163 .cs-li:before {
+    /* bullet */
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 0.5rem;
+    background: var(--secondary);
+    display: block;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+  #RPsbs-1163 .cs-button-solid,
+  #RPsbsr-1163 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #RPsbs-1163 .cs-button-solid:before,
+  #RPsbsr-1163 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #RPsbs-1163 .cs-button-solid:hover:before,
+  #RPsbsr-1163 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #RPsbs-1163 .cs-image-group,
+  #RPsbsr-1163 .cs-image-group {
+    /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
+    font-size: min(2.15vw, .8em);
+    width: 42.375em;
+    height: 36.75em;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #RPsbs-1163 .cs-picture,
+  #RPsbsr-1163 .cs-picture {
+    position: absolute;
+  }
+  #RPsbs-1163 .cs-picture img,
+  #RPsbsr-1163 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #RPsbs-1163 .cs-picture1,
+  #RPsbsr-1163 .cs-picture1 {
+    width: 39.375em;
+    height: 24.375em;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  #RPsbs-1163 .cs-picture2,
+  #RPsbsr-1163 .cs-picture2 {
+    width: 28.8125em;
+    height: 18.75em;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+  #RPsbs-1163 .cs-graphic,
+  #RPsbsr-1163 .cs-graphic {
+    height: auto;
+    position: absolute;
+  }
+  #RPsbs-1163 .cs-graphic1,
+  #RPsbsr-1163 .cs-graphic1 {
+    width: 72.125em;
+    top: 1.25em;
+    right: -3.75em;
+    transform: rotate(-15deg);
+  }
+  #RPsbs-1163 .cs-graphic2,
+  #RPsbsr-1163 .cs-graphic2 {
+    width: 67.8125em;
+    top: 11.5625em;
+    right: -1.5625em;
+  }
+  #RPsbs-1163 .cs-box,
+  #RPsbsr-1163 .cs-box {
+    width: 12.3125em;
+    height: 11.125em;
+    padding: 0.5rem;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    bottom: 0;
+  }
+  #RPsbs-1163 .cs-number,
+  #RPsbsr-1163 .cs-number {
+    /* 20px - 39px */
+    font-size: clamp(1.25rem, 4vw, 2.4375rem);
+    text-align: center;
+    line-height: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    /* 4px - 8px */
+    margin: 0 0 clamp(0.25rem, 1vw, 0.5rem);
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+  #RPsbs-1163 .cs-desc,
+  #RPsbsr-1163 .cs-desc {
+    /* 12px - 16px */
+    font-size: clamp(0.75rem, 1.9vw, 1rem);
+    text-align: center;
+    line-height: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    max-width: 12ch;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #RPsbs-1163 .cs-container,
+  #RPsbsr-1163 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #RPsbs-1163 .cs-image-group,
+  #RPsbsr-1163 .cs-image-group {
+    font-size: min(1.2vw, 1em);
+    flex: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #RPsbs-1163 .cs-title,
+  body.dark-mode #RPsbsr-1163 .cs-title,
+  body.dark-mode #RPsbs-1163 .cs-text,
+  body.dark-mode #RPsbsr-1163 .cs-text,
+  body.dark-mode #RPsbs-1163 .cs-h3,
+  body.dark-mode #RPsbsr-1163 .cs-h3,
+  body.dark-mode #RPsbs-1163 .cs-li,
+  body.dark-mode #RPsbsr-1163 .cs-li {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #RPsbs-1163 .cs-text,
+  body.dark-mode #RPsbsr-1163 .cs-text,
+  body.dark-mode #RPsbs-1163 .cs-li,
+  body.dark-mode #RPsbsr-1163 .cs-li {
+    opacity: 0.8;
+  }
+  body.dark-mode #RPsbs-1163 .cs-graphic,
+  body.dark-mode #RPsbsr-1163 .cs-graphic {
+    opacity: 0.1;
+  }
+}
+/*-- -------------------------- -->
+<---    Side By Side Reverse    -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #RPsbsr-1163 {
+    background-color: #f7f7f7;
+  }
+  #RPsbsr-1163 .cs-picture1 {
+    left: auto;
+    right: 0;
+  }
+  #RPsbsr-1163 .cs-picture2 {
+    right: auto;
+    left: 0;
+  }
+  #RPsbsr-1163 .cs-graphic {
+    height: auto;
+    position: absolute;
+  }
+  #RPsbsr-1163 .cs-graphic1 {
+    right: auto;
+    left: -3.75em;
+    transform: rotate(-165deg);
+  }
+  #RPsbsr-1163 .cs-graphic2 {
+    right: auto;
+    left: -1.5625em;
+  }
+  #RPsbsr-1163 .cs-box {
+    left: auto;
+    right: 0;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #RPsbsr-1163 .cs-image-group {
+    /* sends it to the right in the 2nd positon */
+    order: 2;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #RPsbsr-1163 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-1072 {
+    padding: var(--sectionPadding);
+    background-color: var(--primary);
+    position: relative;
+    z-index: 1;
+  }
+  #cta-1072 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-1072 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-1072 .cs-flex {
+    max-width: 39.375rem;
+  }
+  #cta-1072 .cs-title {
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-1072 .cs-button-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #cta-1072 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #cta-1072 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #cta-1072 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #cta-1072 .cs-button-transparent {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    transition: color 0.3s;
+  }
+  #cta-1072 .cs-button-transparent:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #cta-1072 .cs-button-transparent:after {
+    /* border */
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+    pointer-events: none;
+  }
+  #cta-1072 .cs-button-transparent:hover {
+    color: var(--primary);
+  }
+  #cta-1072 .cs-button-transparent:hover:before {
+    width: 100%;
+  }
+  #cta-1072 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #cta-1072 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #1a1a1a;
+    opacity: 0.88;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cta-1072 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+  }
+}
+/*-- -------------------------- -->
+<---         Why Choose         -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #why-1166 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    position: relative;
+  }
+  #why-1166 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #why-1166 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #why-1166 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #why-1166 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #why-1166 .cs-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #why-1166 .cs-li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  #why-1166 .cs-li-picture {
+    /* 60px - 80px */
+    width: clamp(3.75rem, 6vw, 5rem);
+    height: clamp(3.75rem, 6vw, 5rem);
+    margin: 0;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+  #why-1166 .cs-li-icon {
+    /* 24px - 32px */
+    width: clamp(1.5rem, 3vw, 2rem);
+    height: auto;
+    display: block;
+  }
+  #why-1166 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    text-align: left;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+  }
+  #why-1166 .cs-li-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-align: left;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #why-1166 .cs-image-group {
+    /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
+    font-size: min(1.7vw, .7em);
+    width: 53.625em;
+    height: auto;
+    /* 60px - 80px */
+    padding-top: clamp(3.75rem, 6vw, 5rem);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    /* 48px - 64px, changes to 36px at large desktop */
+    row-gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+  #why-1166 .cs-graphic-wrapper {
+    width: 100vw;
+    height: 85%;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+  #why-1166 .cs-graphic {
+    /* changes at tablet */
+    width: 250vw;
+    height: auto;
+    opacity: 0.04;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+  #why-1166 .cs-stat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  #why-1166 .cs-icon-wrapper {
+    /* 72px - 96px */
+    width: clamp(4.5rem, 12vw, 6rem);
+    height: clamp(4.5rem, 12vw, 6rem);
+    background-color: #484848;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #why-1166 .cs-icon {
+    /* 32px - 48px */
+    width: clamp(2rem, 6vw, 3rem);
+  }
+  #why-1166 .cs-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #why-1166 .cs-number {
+    font-size: clamp(1.9375rem, 5.9vw, 3.0625rem);
+    line-height: 1.2em;
+    font-weight: 900;
+    text-align: left;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+  #why-1166 .cs-desc {
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-align: left;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+  #why-1166 .cs-picture1 {
+    width: auto;
+    height: 29.8125em;
+    display: block;
+    position: absolute;
+    bottom: 1.25em;
+    left: 0;
+    z-index: 10;
+  }
+  #why-1166 .cs-picture1 img {
+    height: 100%;
+    width: auto;
+  }
+  #why-1166 .cs-picture2 {
+    width: auto;
+    height: 33.625em;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  #why-1166 .cs-picture2 img {
+    height: 100%;
+    width: auto;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #why-1166 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  #why-1166 .cs-content {
+    width: 47%;
+  }
+  #why-1166 .cs-image-group {
+    font-size: min(1vw, 1em);
+    width: 32.625em;
+    height: 100%;
+    padding: 0;
+    flex: none;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    margin-right: 9.375em;
+  }
+  #why-1166 .cs-graphic-wrapper {
+    width: 32.625em;
+    height: 87%;
+  }
+  #why-1166 .cs-graphic {
+    /* changes at large desktop */
+    width: 122.375em;
+    top: 0;
+    transform: translateX(-50%) rotate(-10deg);
+  }
+  #why-1166 .cs-picture1 {
+    height: 62%;
+    max-height: 29.8125em;
+    right: auto;
+    left: 50%;
+    transform: translateX(-54%);
+  }
+  #why-1166 .cs-picture2 {
+    height: 67%;
+    max-height: 33.625em;
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #why-1166 .cs-image-group {
+    margin-right: 3.125em;
+    gap: 2.25em;
+  }
+  #why-1166 .cs-graphic-wrapper {
+    height: 83%;
+  }
+  #why-1166 .cs-graphic {
+    width: 93.5em;
+    right: -1.25em;
+    top: 6.875em;
+    left: auto;
+    transform: rotate(-10deg);
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #why-1166 .cs-title,
+  body.dark-mode #why-1166 .cs-text,
+  body.dark-mode #why-1166 .cs-h3,
+  body.dark-mode #why-1166 .cs-li-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #why-1166 .cs-text,
+  body.dark-mode #why-1166 .cs-li-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #why-1166 .cs-li-picture {
+    background-color: var(--accent);
+  }
+  body.dark-mode #why-1166 .cs-li-icon {
+    filter: grayscale(1) brightness(1000%);
+  }
+}
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-1182 {
+    padding: var(--sectionPadding);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #gallery-1182 .cs-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #gallery-1182 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #gallery-1182 .cs-title {
+    margin: 0;
+  }
+  #gallery-1182 .cs-gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #gallery-1182 .cs-picture {
+    width: 100%;
+    height: 67vw;
+    /* makes it square */
+    aspect-ratio: 1;
+    display: block;
+    grid-column: span 5;
+    grid-row: span 1;
+    position: relative;
+  }
+  #gallery-1182 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Tablet - 650px */
+@media only screen and (min-width: 40.625rem) {
+  #gallery-1182 {
+    flex-direction: row;
+  }
+  #gallery-1182 .cs-picture {
+    grid-column: span 2;
+    height: 23vw;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #gallery-1182 .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+}
+/*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #contact-1184 {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
+    position: relative;
+    z-index: 1;
+  }
+  #contact-1184 .cs-container {
+    width: 100%;
+    /* changes to 100% at tablet */
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    /* 48px - 80px */
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  #contact-1184 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #contact-1184 .cs-title {
+    margin: 0 0 2rem 0;
+  }
+  #contact-1184 .cs-form {
+    width: 100%;
+    /* 24px - 48px top and bottom */
+    /* 24px - 32px left and right */
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem);
+    /* prevents flexbox from affecting height and width */
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  #contact-1184 .cs-label {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    color: var(--headerColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  #contact-1184 .cs-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0;
+    padding-left: 1.5rem;
+    color: var(--headerColor);
+    background-color: #f7f7f7;
+    border: none;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+  }
+  #contact-1184 .cs-input::placeholder {
+    color: #7d799c;
+    opacity: 0.6;
+  }
+  #contact-1184 .cs-textarea {
+    min-height: 7.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-family: inherit;
+  }
+  #contact-1184 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    border: none;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    transition: color 0.3s;
+  }
+  #contact-1184 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #contact-1184 .cs-button-solid:hover {
+    color: #fff;
+  }
+  #contact-1184 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #contact-1184 .cs-submit {
+    min-width: 17.6875rem;
+    border-radius: 0;
+  }
+  #contact-1184 .cs-submit:hover {
+    cursor: pointer;
+  }
+  #contact-1184 .cs-background {
+    width: 100%;
+    height: 80vw;
+    max-height: 28.125rem;
+    display: block;
+    position: relative;
+  }
+  #contact-1184 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 48rem) {
+  #contact-1184 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #contact-1184 .cs-container {
+    max-width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    /* 16px - 52px */
+    gap: clamp(1rem, 2vw, 3.25rem);
+  }
+  #contact-1184 .cs-content {
+    width: 45%;
+    max-width: 33.875rem;
+    flex: none;
+  }
+  #contact-1184 .cs-background {
+    height: auto;
+    max-height: 100%;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #contact-1184 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #contact-1184 .cs-title,
+  body.dark-mode #contact-1184 .cs-text,
+  body.dark-mode #contact-1184 .cs-header,
+  body.dark-mode #contact-1184 .cs-link {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #contact-1184 .cs-link {
+    opacity: 0.8;
+  }
+  body.dark-mode #contact-1184 .cs-form {
+    background-color: var(--medium);
+  }
+  body.dark-mode #contact-1184 .cs-label {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #contact-1184 .cs-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #contact-1184 .cs-input::placeholder {
+    color: #fff;
+    opacity: 0.5;
+  }
+}
+/*-- -------------------------- -->
+<---          Footer            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cs-footer-1104 {
+    padding: var(--sectionPadding);
+    position: relative;
+    /* Navigation Links */
+  }
+  #cs-footer-1104 .cs-container {
+    width: 100%;
+    /* reset on desktop */
+    max-width: 43.75rem;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+  #cs-footer-1104 .cs-logo-group {
+    /* takes up all the space, lets the other ul's wrap below it */
+    width: 100%;
+    position: relative;
+  }
+  #cs-footer-1104 .cs-logo {
+    width: 12.3125rem;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  #cs-footer-1104 .cs-logo-img {
+    width: 100%;
+    height: auto;
+  }
+  #cs-footer-1104 .cs-logo-img.dark {
+    display: none;
+  }
+  #cs-footer-1104 .cs-nav {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #cs-footer-1104 .cs-nav-li {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #cs-footer-1104 .cs-header {
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    display: block;
+  }
+  #cs-footer-1104 .cs-nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.5em;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s;
+  }
+  #cs-footer-1104 .cs-nav-link:before {
+    /* underline */
+    content: "";
+    width: 0%;
+    height: 0.125rem;
+    background: currentColor;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    bottom: -0.125rem;
+    left: 0;
+    transition: width 0.3s;
+  }
+  #cs-footer-1104 .cs-nav-link:hover {
+    color: var(--secondary);
+  }
+  #cs-footer-1104 .cs-nav-link:hover:before {
+    width: 100%;
+  }
+  #cs-footer-1104 .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    margin-right: 0.75rem;
+  }
+  #cs-footer-1104 .cs-bottom {
+    max-width: 80rem;
+    margin: auto;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #484848;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cs-footer-1104 .cs-copyright,
+  #cs-footer-1104 .cs-copyright-link {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColorWhite);
+  }
+  #cs-footer-1104 .cs-copyright-link {
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  #cs-footer-1104 .cs-copyright-link:hover {
+    color: var(--secondary);
+  }
+  #cs-footer-1104 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #cs-footer-1104 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: -moz-linear-gradient(left, rgba(26, 26, 26, 0.94) 0%, #1a1a1a 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(26, 26, 26, 0.94) 0%, #1a1a1a 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(26, 26, 26, 0.94) 0%, #1a1a1a 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    opacity: 0.97;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cs-footer-1104 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cs-footer-1104 .cs-container {
+    row-gap: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 2.5rem;
+  }
+  #cs-footer-1104 .cs-nav {
+    width: auto;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cs-footer-1104 .cs-container {
+    max-width: 80rem;
+    flex-wrap: nowrap;
+    /* align everything to the right */
+    justify-content: flex-end;
+    column-gap: 5.25rem;
+  }
+  #cs-footer-1104 .cs-logo-group {
+    width: 30%;
+    max-width: 24.1875rem;
+    /* pushes away from everything to the right */
+    margin-right: auto;
+  }
+  #cs-footer-1104 .cs-text {
+    width: 100%;
   }
 }
