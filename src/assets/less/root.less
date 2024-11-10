@@ -8,13 +8,13 @@
 @media only screen and (min-width: 0rem) {
     // Website colors
     :root {
-        --primary: #ffba19;
-        --primaryLight: #ffd675;
-        --secondary: #001f3f;
-        --secondaryLight: #001f3f;
+        --primary: #bd3636;
+        --primaryLight: #F5F5F5;
+        --secondary: #555555;
+        --secondaryLight: #8d2121;
         --headerColor: #1a1a1a;
-        --bodyTextColor: #4e4b66;
-        --bodyTextColorWhite: #fafbfc;
+        --bodyTextColor: #555555;
+        --bodyTextColorWhite: #F5F5F5;
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -245,30 +245,29 @@
     body.dark-mode {
         #dark-mode-toggle {
             .cs-sun {
-                opacity: 1;
                 transform: translate(-50%, -50%);
+                opacity: 1;
             }
 
             .cs-moon {
-                opacity: 0;
                 transform: translate(-50%, -150%);
-                fill: #fff;
+                opacity: 0;
             }
         }
     }
 
     #dark-mode-toggle {
-        z-index: 1000;
-        position: absolute;
-        top: (10/16rem);
-        right: (70/16rem);
         display: block;
-        border: none;
-        background: transparent;
-        height: (48/16rem);
+        position: absolute;
+        bottom: (20/16rem);
+        right: (90/16rem);
         width: (48/16rem);
+        height: (48/16rem);
+        background: transparent;
+        border: none;
         overflow: hidden;
         padding: 0;
+        z-index: 1000;
 
         img,
         svg {
@@ -277,25 +276,28 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            height: (20/16rem);
             width: (20/16rem);
+            height: (20/16rem);
             pointer-events: none;
         }
 
         .cs-moon {
             z-index: 2;
             // Transition properties
-            transition: transform 0.3s, opacity 0.3s;
-
-            // fill: yellow; --> uncomment to change the color of the moon if needed
+            transition:
+                transform 0.3s,
+                opacity 0.3s;
+            fill: #fff;
         }
 
         .cs-sun {
             z-index: 1;
-            opacity: 0;
             // Transition property
             transform: translate(-50%, 100%);
-            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+            transition:
+                transform 0.3s,
+                opacity 0.3s;
         }
     }
 }
@@ -304,9 +306,9 @@
 @media only screen and (min-width: 64rem) {
     #dark-mode-toggle {
         position: relative;
-        top: auto;
-        right: auto;
         transform: none;
+        bottom: auto;
+        right: auto;
         margin: 0;
 
         &:hover {
@@ -326,25 +328,24 @@ html {
     padding: 0;
 }
 
-/* Mobile - 767px */
-@media only screen and (max-width: 47.9375rem) {
-    #cs-navigation {
-        .cs-top-link {
-            &:nth-of-type(2) {
-                display: none;
-            }
-        }
-    }
-}
-
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
     body {
         &.cs-open {
             overflow: hidden;
-
             #cs-navigation {
-                background-color: rgba(26, 26, 26, 1);
+                &:after {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.scroll {
+            #cs-navigation {
+                &:after {
+                    width: 100%;
+                }
             }
         }
     }
@@ -353,115 +354,69 @@ html {
         width: 100%;
         /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
-        background-color: rgba(26, 26, 26, 0.84);
+        border-bottom: 1px solid #484848;
         position: fixed;
         z-index: 10000;
-        transition: background-color 0.3s;
 
         &:before {
+            /* mobile nav overlay on open */
             content: "";
-            width: 100%;
-            height: 0vh;
+            width: 0%;
+            height: 100vh;
             background: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            display: block;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            z-index: -1100;
-            transition:
-                height 0.5s,
-                opacity 0.5s;
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
+            opacity: 0;
+            position: absolute;
+            display: block;
+            top: 100%;
+            right: 0;
+            z-index: -11;
+            transition:
+                width 0.5s,
+                opacity 0.3s;
+        }
+
+        &:after {
+            /* on scroll overlay */
+            content: "";
+            width: 0%;
+            height: 100%;
+            background: #1a1a1a;
+            opacity: 0.8;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition:
+                width 0.3s,
+                opacity 0.3s;
         }
 
         &.cs-active {
             &:before {
-                height: 150vh;
+                width: 100%;
                 opacity: 1;
             }
+
             .cs-ul-wrapper {
                 opacity: 1;
-                transform: scaleY(1);
-                transition-delay: 0.15s;
+                transform: scaleX(1);
+                transition-delay: 0.2s;
             }
 
             .cs-li {
+                transform: translateX(0);
                 opacity: 1;
-                transform: translateY(0);
             }
-        }
-
-        .cs-top-bar {
-            width: 100%;
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-top-container {
-            width: 100%;
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            padding: (16/16rem);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: (50/16rem);
-        }
-
-        .cs-top-contact {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (24/16rem);
-        }
-
-        .cs-top-link {
-            font-size: (14/16rem);
-            line-height: 1.5em;
-            text-decoration: none;
-            margin: 0;
-            color: #f7f7f7;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (8/16rem);
-        }
-
-        .cs-link-icon {
-            width: (16/16rem);
-            height: auto;
-            display: block;
-        }
-
-        .cs-top-social {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: (16/16rem);
-        }
-
-        .cs-social-link {
-            text-decoration: none;
-            width: auto;
-            height: auto;
-            display: block;
-        }
-
-        .cs-social-icon {
-            width: (20/16rem);
-            height: auto;
-            display: block;
         }
 
         .cs-container {
             width: 100%;
+            padding: (16/16rem);
             /* prevents padding and border from affecting height and width */
             box-sizing: border-box;
-            padding: (16/16rem);
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -471,9 +426,9 @@ html {
             width: (147/16rem);
             height: auto;
             margin: 0 auto 0 0;
+            padding: 0;
             /* prevents padding and border from affecting height and width */
             box-sizing: border-box;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -484,6 +439,8 @@ html {
                 height: 100%;
                 /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
                 object-fit: contain;
+                /* places the image to the left edge of the parent */
+                object-position: left;
             }
         }
 
@@ -506,13 +463,13 @@ html {
 
             .cs-line2 {
                 top: 50%;
-                transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
                 transform-origin: center;
+                transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
             }
 
             .cs-line3 {
-                opacity: 0;
                 bottom: 100%;
+                opacity: 0;
             }
         }
 
@@ -526,8 +483,8 @@ html {
         .cs-line {
             width: 100%;
             height: 2px;
-            background-color: #fafbfc;
             border-radius: 2px;
+            background-color: #fafbfc;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -535,15 +492,15 @@ html {
 
         .cs-line1 {
             top: 0;
+            transform-origin: center;
             transition:
                 transform 0.5s,
                 top 0.3s,
                 left 0.3s;
             animation-duration: 0.7s;
             animation-timing-function: ease;
-            animation-direction: normal;
             animation-fill-mode: forwards;
-            transform-origin: center;
+            animation-direction: normal;
         }
 
         .cs-line2 {
@@ -555,8 +512,8 @@ html {
                 transform 0.5s;
             animation-duration: 0.7s;
             animation-timing-function: ease;
-            animation-direction: normal;
             animation-fill-mode: forwards;
+            animation-direction: normal;
         }
 
         .cs-line3 {
@@ -567,46 +524,48 @@ html {
         }
 
         .cs-ul-wrapper {
-            width: 100%;
-            height: auto;
-            padding-bottom: (48/16rem);
-            background-color: #1a1a1a;
-            overflow: hidden;
-            box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+            min-width: 70vw;
+            height: 100vh;
             opacity: 0;
+            background-color: #1a1a1a;
+            box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+            overflow: hidden;
             position: absolute;
             top: 100%;
-            left: 0;
+            left: auto;
+            right: 0;
             z-index: -1;
-            transform: scaleY(0);
+            transform: scaleX(0);
+            transform-origin: top right;
             transition:
                 transform 0.4s,
                 opacity 0.3s;
-            transform-origin: top;
         }
 
         .cs-ul {
-            width: 100%;
-            height: auto;
-            max-height: 65vh;
             margin: 0;
-            padding: (48/16rem) 0 0 0;
+            /* 28px - 40px */
+            padding: (48/16rem) clamp(1.75rem, 3vw, 2.5rem) (32/16rem)
+                (70/16rem);
+            width: auto;
+            min-width: 40%;
+            height: 65vh;
             overflow: scroll;
             display: flex;
-            flex-direction: column;
             justify-content: flex-start;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-end;
             gap: (20/16rem);
         }
 
         .cs-li {
-            text-align: center;
+            text-align: right;
             list-style: none;
             width: 100%;
             margin-right: 0;
-            opacity: 0;
             /* transition from these values */
-            transform: translateY(-4.375rem);
+            transform: translateX(-2.5rem);
+            opacity: 0;
             transition:
                 transform 0.6s,
                 opacity 0.9s;
@@ -638,18 +597,6 @@ html {
             &:nth-of-type(9) {
                 transition-delay: 0.45s;
             }
-            &:nth-of-type(10) {
-                transition-delay: 0.5s;
-            }
-            &:nth-of-type(11) {
-                transition-delay: 0.55s;
-            }
-            &:nth-of-type(12) {
-                transition-delay: 0.6s;
-            }
-            &:nth-of-type(13) {
-                transition-delay: 0.65s;
-            }
         }
 
         .cs-li-link {
@@ -662,12 +609,24 @@ html {
             display: inline-block;
             position: relative;
 
-            &.cs-active {
-                color: var(--secondary);
+            &:before {
+                /* active state underline */
+                content: "";
+                width: 100%;
+                height: 1px;
+                background: currentColor;
+                opacity: 1;
+                position: absolute;
+                display: none;
+                bottom: (-2/16rem);
+                left: 0;
             }
 
-            &:hover {
+            &.cs-active {
                 color: var(--secondary);
+                &:before {
+                    display: block;
+                }
             }
         }
 
@@ -678,317 +637,56 @@ html {
 }
 
 /*-- -------------------------- -->
-<---     Navigation Dropdown    -->
-<--- -------------------------- -*/
-
-/* Mobile - 1023px */
-@media only screen and (max-width: 63.9375rem) {
-    #cs-navigation {
-        .cs-li {
-            text-align: center;
-            width: 100%;
-            display: block;
-        }
-
-        .cs-dropdown {
-            color: var(--bodyTextColorWhite);
-            position: relative;
-            &.cs-active {
-                .cs-drop-ul {
-                    height: auto;
-                    margin: (12/16rem) 0 0 0;
-                    padding: (12/16rem) 0;
-                    opacity: 1;
-                    visibility: visible;
-                }
-
-                .cs-drop-link {
-                    opacity: 1;
-                }
-            }
-
-            .cs-li-link {
-                position: relative;
-                transition: opacity 0.3s;
-            }
-        }
-
-        .cs-drop-icon {
-            width: (15/16rem);
-            height: auto;
-            position: absolute;
-            top: 50%;
-            right: (-20/16rem);
-            transform: translateY(-50%);
-        }
-
-        .cs-drop-ul {
-            width: 100%;
-            height: 0;
-            margin: 0;
-            padding: 0;
-            background-color: var(--primary);
-            overflow: hidden;
-            opacity: 0;
-            display: flex;
-            visibility: hidden;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (12/16rem);
-            transition:
-                padding 0.3s,
-                margin 0.3s,
-                height 0.3s,
-                opacity 0.3s,
-                visibility 0.3s;
-        }
-
-        .cs-drop-li {
-            list-style: none;
-        }
-
-        .cs-li-link {
-            &.cs-drop-link {
-                /* 14px - 16px */
-                font-size: clamp(0.875rem, 2vw, 1.25rem);
-                color: #fff;
-            }
-        }
-    }
-}
-
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #cs-navigation {
-        .cs-dropdown {
-            position: relative;
-            &:hover {
-                cursor: pointer;
-                .cs-drop-ul {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: scaleY(1);
-                }
-
-                .cs-drop-li {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        }
-
-        .cs-drop-icon {
-            width: (15/16rem);
-            height: auto;
-            display: inline-block;
-        }
-
-        .cs-drop-ul {
-            min-width: (200/16rem);
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            overflow: hidden;
-            box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
-            opacity: 0;
-            border-bottom: 5px solid var(--primary);
-            visibility: hidden;
-            /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
-            // columns: 2;
-            position: absolute;
-            top: 99.9%;
-            z-index: -100;
-            transform: scaleY(0);
-            transition:
-                transform 0.3s,
-                visibility 0.3s,
-                opacity 0.3s;
-            transform-origin: top;
-        }
-
-        .cs-drop-li {
-            font-size: (16/16rem);
-            text-decoration: none;
-            list-style: none;
-            width: 100%;
-            height: auto;
-            color: var(--bodyTextColorWhite);
-            opacity: 0;
-            display: block;
-            transform: translateY(-0.625rem);
-            transition:
-                opacity 0.6s,
-                transform 0.6s;
-
-            &:nth-of-type(1) {
-                transition-delay: 0.05s;
-            }
-            &:nth-of-type(2) {
-                transition-delay: 0.1s;
-            }
-            &:nth-of-type(3) {
-                transition-delay: 0.15s;
-            }
-            &:nth-of-type(4) {
-                transition-delay: 0.2s;
-            }
-            &:nth-of-type(5) {
-                transition-delay: 0.25s;
-            }
-            &:nth-of-type(6) {
-                transition-delay: 0.3s;
-            }
-            &:nth-of-type(7) {
-                transition-delay: 0.35s;
-            }
-            &:nth-of-type(8) {
-                transition-delay: 0.4s;
-            }
-            &:nth-of-type(9) {
-                transition-delay: 0.45s;
-            }
-            &:nth-of-type(10) {
-                transition-delay: 0.5s;
-            }
-            &:nth-of-type(11) {
-                transition-delay: 0.55s;
-            }
-            &:nth-of-type(12) {
-                transition-delay: 0.6s;
-            }
-            &:nth-of-type(13) {
-                transition-delay: 0.65s;
-            }
-        }
-
-        .cs-li-link {
-            &.cs-drop-link {
-                font-size: (16/16rem);
-                line-height: 1.5em;
-                text-decoration: none;
-                white-space: nowrap;
-                width: 100%;
-                /* prevents padding and border from affecting height and width */
-                box-sizing: border-box;
-                padding: (12/16rem);
-                color: var(--bodyTextColorWhite);
-                display: block;
-                transition:
-                    color 0.3s,
-                    background-color 0.3s;
-
-                &:hover {
-                    background-color: #f7f7f7;
-                    color: var(--primary);
-                }
-
-                &:before {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-
-/*-- -------------------------- -->
 <---     Desktop Navigation     -->
 <--- -------------------------- -*/
 
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
+    body {
+        &.scroll {
+            #cs-navigation {
+                &:after {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
     #cs-navigation {
         width: 100%;
+        padding: 0;
         /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
-        padding: 0;
-        background-color: rgba(26, 26, 26, 0.84);
+        border: 1px solid #484848;
         position: fixed;
         z-index: 10000;
 
-        .cs-top-bar {
+        &:after {
+            /* on scroll overlay */
+            content: "";
             width: 100%;
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-top-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            padding: (16/16rem);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: (50/16rem);
-        }
-
-        .cs-top-contact {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (24/16rem);
-        }
-
-        .cs-top-link {
-            font-size: (14/16rem);
-            line-height: 1.5em;
-            text-decoration: none;
-            margin: 0;
-            color: #f7f7f7;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (8/16rem);
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .cs-link-icon {
-            width: (16/16rem);
-            height: auto;
+            height: 0%;
+            background: #1a1a1a;
+            opacity: 0.8;
+            position: absolute;
             display: block;
-        }
-
-        .cs-top-social {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: (16/16rem);
-        }
-
-        .cs-social-link {
-            text-decoration: none;
-            width: auto;
-            height: auto;
-            display: block;
-            transition: transform 0.3s;
-
-            &:hover {
-                transform: translateY(-0.25rem);
-            }
-        }
-
-        .cs-social-icon {
-            width: (20/16rem);
-            height: auto;
-            display: block;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition:
+                height 0.3s,
+                opacity 0.3s;
         }
 
         .cs-container {
             width: 100%;
-            max-width: (1280/16rem);
             /* same height as the cs-ul-wrapper */
             height: (93/16rem);
+            max-width: (1280/16rem);
             margin: auto;
-            /* prevents padding from affecting height */
-            box-sizing: border-box;
             padding: 0 (16/16rem);
+            /* prevents padding from affectin gheight */
+            box-sizing: border-box;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -1023,8 +721,8 @@ html {
         .cs-ul-wrapper {
             /* absolutely positioned to be dead center */
             position: absolute;
-            top: 50%;
             left: 50%;
+            top: 50%;
             transform: translate(-50%, -50%);
         }
 
@@ -1063,8 +761,8 @@ html {
                 height: 1px;
                 background: currentColor;
                 opacity: 1;
-                display: block;
                 position: absolute;
+                display: block;
                 bottom: -2px;
                 left: 0;
                 transition: width 0.3s;
@@ -1087,30 +785,30 @@ html {
 
         .cs-button-solid {
             font-size: (16/16rem);
-            font-weight: 700;
             /* 46px - 56px */
             line-height: clamp(2.875em, 5.5vw, 3.5em);
-            text-align: center;
             text-decoration: none;
-            min-width: (150/16rem);
+            font-weight: 700;
+            text-align: center;
             margin: 0;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
+            color: #fff;
+            min-width: (150/16rem);
             padding: 0 (32/16rem);
             background-color: var(--primary);
-            color: #fff;
             display: inline-block;
             position: relative;
             z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
             transition: color 0.3s;
 
             &:before {
                 content: "";
-                width: 0%;
+                position: absolute;
                 height: 100%;
+                width: 0%;
                 background: #fff;
                 opacity: 1;
-                position: absolute;
                 top: 0;
                 left: 0;
                 z-index: -1;
@@ -1130,5 +828,7 @@ html {
         }
     }
 }
+
+                                
                                 
                                 
