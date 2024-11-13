@@ -1,9 +1,8 @@
 ---
-title: 'Full Throttle Performance | Indianapolis, IN'
+title: 'Pixel Perfect Websites'
 description: 'Meta description for the page'
-preloadImg: '/assets/images/landing.jpg'
+preloadImg: '/assets/images/hero.webp'
 permalink: '/'
-tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
   key: Home
   order: 100
@@ -12,8 +11,8 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css"/>
-    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link rel="stylesheet" href="/assets/css/critical.css" />
 
     <!-- Script for Netlify Identity -->
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -32,518 +31,467 @@ eleventyNavigation:
                 });
         }
     </script>
-
-    <!-- JSON Schema Markup -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "LocalBusiness",
-            "name": "{{ client.name }}",
-            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
-            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-            {% if client.email %}"email": "{{ client.email }}",{% endif %}
-            {% if client.address %}
-                "address": {
-                    "@type": "PostalAddress"{% if client.address.lineOne %},
-                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-                    {% endif %}
-                    {% if client.address.city %},
-                        "addressLocality": "{{ client.address.city }}"
-                    {% endif %}
-                    {% if client.address.state %},
-                        "addressRegion": "{{ client.address.state }}"
-                    {% endif %}
-                    {% if client.address.zip %},
-                        "postalCode": "{{ client.address.zip }}"
-                    {% endif %}
-                    {% if client.address.country %},
-                        "addressCountry": "{{ client.address.country }}"
-                    {% endif %}
-                },
-            {% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if client.socials %}
-                "sameAs": [{% for platform, url in client.socials %}
-                        {% if not loop.first %},{% endif %}
-                        "{{ url }}"
-                    {% endfor %}]
-            {% endif %}
-        }
-    </script>
 {% endblock %}
 
 {% block body %}
+
+<!--
+    NOTES:
+
+    We are using negative margin on the cs-card-group to create the overlapping effect. This pulls the section below it toward it which makes it overlap whatever section is below it. So we need to add extra padding top the the section below it to account for this. Here's the values you need to add to the section below this one to make them work together:
+
+    On mobile:
+    LESS: padding-top: (260/16rem)
+    SCSS: padding-top: calc(260 / 16 * 1rem)
+    CSS: 16.25rem
+
+    On tablet (768px):
+    /* 132px - 260px */
+    padding-top: clamp(8.25rem, 25vw, 16.25rem);
+-->
 
 <!-- ============================================ -->
 <!--                    Hero                      -->
 <!-- ============================================ -->
 
-<section id="hero-1159">
+<section id="hero-1482">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">The Best Care Servicing In Town</span>
-            <h1 class="cs-title">We Are Qualified And Professional</h1>
+            <span class="cs-topper">Website Specialists</span>
+            <h1 class="cs-title">Small Business Web Design
+                + Development</h1>
             <p class="cs-text">
-                Driven by passion, we specialize in transforming Mustangs into high-performance machines. From power upgrades to custom bodywork, we bring your dream Mustang to life.
+                No page builders or WordPress - We offer 100% hand-coded websites with superior results starting at $175/mo.
             </p>
-            <a href="" class="cs-button-solid">Explore Services</a>
+            <a href="/contact" class="cs-button-solid">Get Started</a>
         </div>
-        <!-- Person, to make your own crop of a person, visit https://www.remove.bg to do it for you -->
-        <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-hero-m.png">
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-hero2.png">
-        </picture>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img class="cs-icon" src="assets/svgs/phone.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                <h3 class="cs-h3">Mobile-First Design</h3>
+                <img class="cs-graphic" src="assets/svgs/Vector-4.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="assets/svgs/day-care-shield.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                <h3 class="cs-h3">Security and Safety</h3>
+                <img class="cs-graphic" src="assets/svgs/Vector-4.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="assets/svgs/day-care-thumb.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                <h3 class="cs-h3">Built for Speed</h3>
+                <img class="cs-graphic" src="assets/svgs/Vector-4.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="assets/svgs/support-agent.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+                <h3 class="cs-h3">Unlimited Support</h3>
+                <img class="cs-graphic" src="assets/svgs/Vector-4.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+            </li>
+        </ul>
     </div>
-
-    <!--SVG V Graphic-->
-    <img class="cs-graphic" decoding="async" src="/assets/svgs/v-graphic2.svg" alt="graphic" width="1920" height="163" aria-hidden="true">
-
-    <!-- Background Image, also BG Image is set in CSS at 1600px wide for parallax effect -->
+    <!-- Background Image, background image added in the css at 1600px for parallax effect -->
     <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg">
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg">
-        <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg" alt="garage" width="2250" height="1500" aria-hidden="true">
+        <source media="(max-width: 600px)" srcset="/assets/images/hero-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/hero.webp">
+        <img decoding="async" src="/assets/images/hero.webp" alt="indianapolis-scape" width="2250" height="1500" aria-hidden="true">
     </picture>
+    <div class="cs-graphics-wrapper">
+        <!--Flower-->
+        <img class="cs-flower cs-hide" decoding="async" src="assets/svgs/flower.svg" alt="abstract flower" width="139" height="144" aria-hidden="true">
+        <!--Yellow Blob-->
+        <img class="cs-blob1 cs-hide" decoding="async" src="assets/svgs/yellow-shape.svg" alt="abstract shape" width="378" height="268" aria-hidden="true">
+        <!--Red Blob-->
+        <img class="cs-blob2 cs-hide" decoding="async" src="assets/svgs/orange-blob.svg" alt="abstract shap" width="318" height="221" aria-hidden="true">
+        <!--Leaf-->
+        <img class="cs-leaf cs-hide" decoding="async" src="assets/svgs/abstract-leaf.svg" alt="abstract leaf" width="318" height="221" aria-hidden="true">
+    </div>
+    <!--SVG Curve-->
+    <svg class="cs-curve" width="1920" height="136" viewBox="0 0 1920 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z" fill="#fff"/>
+    </svg>
 </section>
                                 
-
 <!-- ============================================ -->
-<!--                   Services                   -->
-<!-- ============================================ -->        
+<!--                  Services                    -->
+<!-- ============================================ -->
 
-<section id="services-1191">
+<section id="services-1378">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Services</span>
-            <h2 class="cs-title">We Provide Quality Auto Performance Services</h2>
-            <p class="cs-text">
-                We provide expert auto performance services to enhance your vehicle’s power, handling, and efficiency. Whether you want more horsepower, better suspension, or an exhaust upgrade, we deliver precision and quality every time.
-            </p>
+            <span class="cs-topper">Our Services</span>
+            <h2 class="cs-title">We’re Commited to Deliver Top High Quality Services</h2>
+            <p class="cs-text">We specialize in small business web design and development for clients anywhere in the US. Every line of code is written by hand to ensure the best performance, which helps bring in more customers to your site and bring more revenue to your business.</p>
         </div>
-        <!--Placed in a wrapper div so we can position the car absolutely inside the container to be centered in the middle of the list on desktop-->
-        <div class="cs-wrapper">
-            <!--Car-->
-            <picture class="cs-image">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/svgs/corv.svg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/svgs/corv.svg">
-                <img loading="lazy" decoding="async" src="/assets/svgs/corv.svg" alt="car" width="510" height="193" aria-hidden="true">
-            </picture>
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <picture class="cs-picture">
-                        <img class="cs-icon"
-                                src="/assets/svgs/turbo.svg"
-                                loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
-                    </picture>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <h3 class="cs-h3">Forced Induction</h3>
-                        <p class="cs-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-picture">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/brake-red.svg"
-                                loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
-                    </picture>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <h3 class="cs-h3">Brakes</h3>
-                        <p class="cs-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-picture">
-                        <img class="cs-icon"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/air-conditioner-red.svg"
-                                loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
-                    </picture>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <h3 class="cs-h3">Engine Swaps</h3>
-                        <p class="cs-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-picture">
-                        <img class="cs-icon"
-                                src="/assets/svgs/nit.svg" loading="lazy"
-                                decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
-                    </picture>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <h3 class="cs-h3">Nitrous System</h3>
-                        <p class="cs-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-picture">
-                        <img class="cs-icon"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/alloy-wheel-red.svg" loading="lazy"
-                                decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
-                    </picture>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <h3 class="cs-h3">Suspension</h3>
-                        <p class="cs-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-picture">
-                        <img class="cs-icon"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/contamination-red.svg"
-                                loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
-                    </picture>
-                    <!-- Text Grouped For Flexbox-->
-                    <div class="cs-text-group">
-                        <h3 class="cs-h3">Exhaust</h3>
-                        <p class="cs-item-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <a href="" class="cs-button-solid">Get In Touch</a>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/agency-layers.svg" alt="icon" width="48" height="48">
+                </picture>
+                <h3 class="cs-h3">Full Development</h3>
+                <p class="cs-item-text">Bespoke websites crafted from concept to launch, tailored to your brand and objectives.</p>
+                <a href="/web-design" class="cs-link">
+                    <img class="cs-arrow" decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                        alt="arrow" width="413" height="374" aria-hidden="true">
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="assets/svgs/star.svg" alt="icon" width="48" height="48">
+                </picture>
+                <h3 class="cs-h3">VIP Treatment</h3>
+                <p class="cs-item-text">Relax as we handle technical aspects, providing top-notch service at every step.</p>
+                <a href="/web-design" class="cs-link">
+                    <img class="cs-arrow" decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                        alt="arrow" width="413" height="374" aria-hidden="true">
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/agency-alert.svg" alt="icon" width="48" height="48">
+                </picture>
+                <h3 class="cs-h3">Mobile Responsive</h3>
+                <p class="cs-item-text">Ensure stunning, flawless site performance across all devices for maximum  engagement.</p>
+                <a href="/web-design" class="cs-link">
+                    <img class="cs-arrow" decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                        alt="arrow" width="413" height="374" aria-hidden="true">
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/agency-meter.svg" alt="icon" width="48" height="48">
+                </picture>
+                <h3 class="cs-h3">SEO Optimization</h3>
+                <p class="cs-item-text">Boost visibility and attract visitors with proven SEO strategies to drive business growth.</p>
+                <a href="/web-design" class="cs-link">
+                    <img class="cs-arrow" decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                        alt="arrow" width="413" height="374" aria-hidden="true">
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="assets/svgs/bolt.svg" alt="icon" width="48" height="48">
+                </picture>
+                <h3 class="cs-h3">Lightning Speed</h3>
+                <p class="cs-item-text">Keep visitors engaged with fast-loading pages, ensuring an exceptional user experience.</p>
+                <a href="/web-design" class="cs-link">
+                    <img class="cs-arrow" decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                        alt="arrow" width="413" height="374" aria-hidden="true">
+                </a>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="assets/svgs/savings.svg" alt="icon" width="48" height="48">
+                </picture>
+                <h3 class="cs-h3">Affordable Rate</h3>
+                <p class="cs-item-text">Get professional quality without breaking the bank with our budget-friendly website plans.</p>
+                <a href="/web-design" class="cs-link">
+                    <img class="cs-arrow" decoding="async"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                        alt="arrow" width="413" height="374" aria-hidden="true">
+                </a>
+            </li>
+        </ul>
     </div>
 </section>
-                                
-
+  
 <!-- ============================================ -->
-<!--                Side By Side                  -->
+<!--                    CTA                       -->
 <!-- ============================================ -->
 
-<section id="RPsbs-1163">
+<section id="cta-403">
     <div class="cs-container">
-        <div class="cs-image-group">
-            <!--Top left image-->
-            <picture class="cs-picture cs-picture1">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img1.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img1.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img1.jpg" alt="appliance" width="630" height="390">
-            </picture>
-            <!--Bottom right image-->
-            <picture class="cs-picture cs-picture2">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img2.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img2.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img2.jpg" alt="appliance" width="461" height="300">
-            </picture>
-            <!--Splash Graphic-->
-            <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/splash-grey.svg" alt="splash" width="1154" height="505" aria-hidden="true">
-            <!--Tire Mark-->
-            <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-mark.svg" alt="tire mark" width="1085" height="322" aria-hidden="true">
-            <div class="cs-box">
-                <span class="cs-number">15+</span>
-                <span class="cs-desc">Years In Business</span>
-            </div>
-        </div>
         <div class="cs-content">
-            <span class="cs-topper">Who We Are</span>
-            <h2 class="cs-title">Quality With The Best Standards</h2>
+            <span class="cs-topper">More than a site</span>
+            <h2 class="cs-title">Our goal is to build you the best website 
+                in your local market. </h2>
             <p class="cs-text">
-                Our skilled technicians provide a full range of services, including diagnostics, fluid flushes, engine replacements, oil changes, and complete vehicle overhauls.
+                We're dedicated to empowering small businesses. With creativity and smart strategies, we build sites that make an impact online
             </p>
-            <ul class="cs-ul">
-                <li class="cs-li">We work with all makes and models</li>
-                <li class="cs-li">Trusted and endorsed by the community</li>
-                <li class="cs-li">Equipped with the latest technology for accurate results</li>
-                <li class="cs-li">Committed to exceptional quality and standards</li>
-                <li class="cs-li">45+ Years of Experience</li>
-            </ul>
-            <a href="" class="cs-button-solid">See More</a>
+            <a href="/about" class="cs-button-solid">Read More</a>
         </div>
     </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/cta-1.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/cta-1.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/cta-1.webp" alt="cleaner" width="1920" height="660" aria-hidden="true">
+    </picture>
+    
 </section>
-                             
+   
+<!-- ============================================ -->
+<!--                 Why Choose                   -->
+<!-- ============================================ -->
+
+<section id="why-choose-1371">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Why Choose Us</span>
+            <h2 class="cs-title">$0 Down, $175 Per Month, 6 Month Minimum Contract</h2>
+            <p class="cs-text">
+                $0 down for a standard 5 page small business website. If you need more than that then we have to do custom pricing based on the scope of work, number of additional pages, and time involved.
+            </p>
+            <p class="cs-text">
+                <strong>You own your domain, content, listing, and profiles. Cancel anytime with no fees or hassle.</strong>
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/svgs/why1.svg" alt="icon" width="24" height="24">
+                    Hosting Fees Included
+                </h3>
+                <p class="cs-item-text">
+                    All-inclusive hosting fees, ensuring seamless website performance without extra costs.
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/svgs/why2.svg" alt="icon" width="24" height="24">
+                    24/7 Customer Service
+                </h3>
+                <p class="cs-item-text">
+                    Access round-the-clock customer service for prompt assistance, ensuring your peace of mind at all times.
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/svgs/why3.svg" alt="icon" width="24" height="24">
+                    Perfect Google Speed
+                </h3>
+                <p class="cs-item-text">
+                    Achieve optimal Google speed scores, enhancing your site's performance and search ranking.
+                </p>
+            </li>
+            <li class="cs-item-picture">
+                <picture class="cs-picture">
+                    <!-- Mobile Image -->
+                    <source media="(max-width: 600px)" srcset="/assets/images/why-choose.webp">
+                    <!-- Tablet and above Image -->
+                    <source media="(min-width: 601px)" srcset="/assets/images/why-choose.webp">
+                    <img loading="lazy" decoding="async" src="/assets/images/why-choose.webp" alt="people" width="590" height="418">
+                </picture>
+                
+                
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/svgs/why4.svg" alt="icon" width="24" height="24">
+                    Unlimited Edits
+                </h3>
+                <p class="cs-item-text">
+                    Enjoy unlimited edits for continuous website refinement and adaptation to your evolving needs.
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/svgs/why5.svg" alt="icon" width="24" height="24">
+                    Web Design & Develop
+                </h3>
+                <p class="cs-item-text">
+                    Expert web design and development services tailored to elevate your online presence effectively.
+                </p>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">
+                    <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="assets/svgs/why6.svg" alt="icon" width="24" height="24">
+                    Google Analytics
+                </h3>
+                <p class="cs-item-text">
+                    Harness the power of Google Analytics for insightful data-driven decisions and improved website performance.
+                </p>
+            </li>
+        </ul>
+        <a href="/about" class="cs-button-solid">Discover More</a>
+    </div>
+    <div class="cs-bubbles cs-bubbles1" aria-hidden="true"></div>
+    <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
+</section>
+          
 <!-- ============================================ -->
 <!--                     CTA                      -->
 <!-- ============================================ -->
 
-<section id="cta-1072">
+<section id="cta-51">
     <div class="cs-container">
         <div class="cs-content">
-            <div class="cs-flex">
-                <span class="cs-topper">Get Our Services</span>
-                <h2 class="cs-title">Let’s Get You On The Road Faster. Schedule Now!</h2>
-            </div>
-            <div class="cs-button-box">
-                <a href="" class="cs-button-solid">Schedule Our Services</a>
-                <a href="" class="cs-button-transparent">Contact Us</a>
-            </div>
-        </div>
-    </div>
-    <picture class="cs-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg">
-        <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg">
-        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg" alt="mechanic" width="1280" height="568">
-    </picture>
-</section>
-                                
-<!-- ============================================ -->
-<!--                Side By Side                  -->
-<!-- ============================================ -->
-
-<section id="why-1166">
-    <div class="cs-container">
-        <div class="cs-image-group">
-            <!--Stat Group-->
-            <div class="cs-stat">
-                <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/why-icon.svg" alt="icon" width="48" height="48" aria-hidden="true">
-                </picture>
-                <div class="cs-flex">
-                    <span class="cs-number">500+</span>
-                    <span class="cs-desc">Satisfied Clients</span>
-                </div>
-            </div>
-            
-            <!--Car-->
-            <picture class="cs-picture cs-picture1">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/svgs/cobra.svg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/svgs/cobra.svg">
-                <img loading="lazy" decoding="async" src="/assets/svgs/cobra.svg" alt="appliance" width="858" height="477">
-            </picture>
-
-            <!--Person, to make your own crop of a person, use https://www.remove.bg/ to remove the background of any image -->
-            <picture class="cs-picture cs-picture2">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-                <source media="(min-width: 601px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-                <img loading="lazy" decoding="async" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="appliance" width="438" height="588">
-            </picture>
-
-            <!--Stripe background-->
-            <div class="cs-graphic-wrapper">
-                <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-mark.svg" alt="tire mark" width="1469" height="626" aria-hidden="true">
-            </div>
-
-        </div>
-        <div class="cs-content">
-            <span class="cs-topper">About Us</span>
-            <h2 class="cs-title">Why Choose Us</h2>
+            <span class="cs-topper">Get in Touch</span>
+            <h2 class="cs-title">Get It Done With Us Today</h2>
             <p class="cs-text">
-                Our team is dedicated to delivering exceptional auto services with precision and care. From diagnostics to complete overhauls, we’re committed to quality in every job.
+                With all the competition out there, the quality of your website reflects the quality of your services. It can be the difference between a customer reaching out to you, or moving on to a competitor. With Great Lakes, you can be rest assured that your online presence is in good hands. Let's elevate your business together. Get it done with us today. </p>
+            <a href="/contact" class="cs-button-solid">Get Started</a>
+        </div>
+    </div>
+    <!-- Background Image-->
+    <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="/assets/images/cta-2.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/cta-2.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/cta-2.webp" alt="cabinets" width="1920" height="1280" aria-hidden="true">
+    </picture>
+    
+</section>
+                                
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-1374">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Portfolio</span>
+            <h2 class="cs-title">Examples Of Our Work</h2>
+            <p class="cs-text">
+                We specialize in small business web design and development for clients anywhere in the US. Every line of code is written by hand to ensure the best performance, which helps bring in more customers to your site and bring more revenue to your business.
             </p>
-            <ul class="cs-list">
-                <li class="cs-li">
-                    <picture class="cs-li-picture">
-                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/247.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Daily Support</h3>
-                        <p class="cs-li-text">
-                            We’re here for you anytime, offering assistance to keep your vehicle running smoothly.
-                        </p>
-                    </div>
-                </li>
-                <li class="cs-li">
-                    <picture class="cs-li-picture">
-                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/members.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Trusted Professionals</h3>
-                        <p class="cs-li-text">
-                            Our team of experienced technicians is committed to delivering quality service you can rely on.
-                        </p>
-                    </div>
-                </li>
-                <li class="cs-li">
-                    <picture class="cs-li-picture">
-                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/clock-zoom.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Fast Turnaround</h3>
-                        <p class="cs-li-text">
-                            We value your time, providing quick and efficient service to get you back on the road as soon as possible.
-                        </p>
-                    </div>
-                </li>
-            </ul>
         </div>
+        <ul class="cs-image-group">
+            <!-- Card 1 -->
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="/assets/images/capture.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/capture.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/capture.jpg" alt="fancy house" width="346" height="346">
+                    </picture>
+                    <div class="cs-item-text">
+                        <div class="cs-flex">
+                            <h3 class="cs-h3">Lawn Pros</h3>
+                            <span class="cs-desc">A complete Landscaping Website</span>
+                        </div>
+                        <picture class="cs-icon-wrapper">
+                            <img class="cs-icon" decoding="async"
+                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                        </picture>
+                    </div>
+                </a>
+            </li>
+            <!-- Card 2 -->
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-2.png">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-2.png">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-portfolio-2.png" alt="modern house" width="346" height="346">
+                    </picture>
+                    <div class="cs-item-text">
+                        <div class="cs-flex">
+                            <h3 class="cs-h3">Matcha and Co</h3>
+                            <span class="cs-desc">A Tea Brand E-commerce Website</span>
+                        </div>
+                        <picture class="cs-icon-wrapper">
+                            <img class="cs-icon" decoding="async"
+                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                        </picture>
+                    </div>
+                </a>
+            </li>
+            <!-- Card 3 -->
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="assets/images/stichsalon.jpg">
+                        <source media="(min-width: 601px)" srcset="assets/images/stichsalon.jpg">
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="assets/images/stichsalon.jpg" alt="modern home at night" width="346" height="346">
+                    </picture>
+                    <div class="cs-item-text">
+                        <div class="cs-flex">
+                            <h3 class="cs-h3">Stitch Salon</h3>
+                            <span class="cs-desc">This is a Salon's landing page.</span>
+                        </div>
+                        <picture class="cs-icon-wrapper">
+                            <img class="cs-icon" decoding="async"
+                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                        </picture>
+                    </div>
+                </a>
+            </li>
+            <!-- Card 4 -->
+            <li class="cs-item">
+                <a href="/contact" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="assets/images/example-cons.jpg">
+                        <source media="(min-width: 601px)" srcset="assets/images/example-cons.jpg">
+                        <img aria-hidden="true" loading="lazy" decoding="async" src="assets/images/example-cons.jpg" alt="modern home" width="346" height="346">
+                    </picture>
+                    <div class="cs-item-text">
+                        <div class="cs-flex">
+                            <h3 class="cs-h3">BuildRight Construction</h3>
+                            <span class="cs-desc">A Construction website</span>
+                        </div>
+                        <picture class="cs-icon-wrapper">
+                            <img class="cs-icon" decoding="async"
+                                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/agency-arrow-upper-right.svg"
+                                            alt="arrow" width="413" height="374" aria-hidden="true">
+                        </picture>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <a href="/contact" class="cs-button-solid">Contact Us</a>
     </div>
+    <div class="cs-bubbles" aria-hidden="true"></div>
 </section>
-                                
 
 <!-- ============================================ -->
-<!--                  Gallery                     -->
+<!--                   Reviews                    -->
 <!-- ============================================ -->
 
-<section id="gallery-1182">
+<section id="reviews-1670">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">What We've Done</span>
-            <h2 class="cs-title">Our Featured Gallery</h2>
+            <span class="cs-topper">Testimonials</span>
+            <h2 class="cs-title">Our Customer Reviews</h2>
         </div>
-        <div class="cs-gallery">
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img3.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img3.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img3.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img4.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img4.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img4.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img6.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img6.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img6.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img5.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img5.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img5.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img7.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img7.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img7.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img8.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img8.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img8.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img9.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img9.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img9.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img10.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img10.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img10.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img11.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img11.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img11.jpg" alt="picture" width="480" height="549">
-            </picture>
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img12.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img12.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img12.jpg" alt="picture" width="480" height="549">
-            </picture>
-        </div>
-    </div>
-</section>
-                                
-<!-- ============================================ -->
-<!--                   Contact                    -->
-<!-- ============================================ -->
-
-<section id="contact-1333">
-    <div class="cs-container">
-        <!--Form-->
-        <form class="cs-form" id="cs-form-1333" name="Contact Form" method="post">
-            <div class="cs-content">
-                <span class="cs-topper">Contact Us</span>
-                <h2 class="cs-title">Make Appointment</h2>
-            </div>
-            <label class="cs-label">
-                Name
-                <input class="cs-input" required type="text" id="name-1333" name="name" placeholder="Name">
-            </label>
-            <label class="cs-label cs-email">
-                Email
-                <input class="cs-input" required type="email" id="email-1333" name="email" placeholder="Email">
-            </label>
-            <label class="cs-label cs-phone">
-                Phone
-                <input class="cs-input" required type="number" id="phone-1333" name="phone" placeholder="Phone">
-            </label>
-            <label class="cs-label">
-                Message
-                <textarea class="cs-input cs-textarea" required name="Message" id="message-1333" placeholder="Write message..."></textarea>
-            </label>
-            <button class="cs-button-solid cs-submit" type="submit">Schedule Appointment</button>
-        </form>
-        <div class="cs-content">
-            <span class="cs-topper">Asked Questions</span>
-            <h2 class="cs-title">Frequently Asked Questions</h2>
-            <ul class="cs-faq-group">
-                <!-- Active class added as default -->
-                <li class="cs-faq-item active">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                           What types of performance upgrades do you offer?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                        We offer a variety of upgrades, including performance exhaust systems, cold air intakes, superchargers, suspension kits, and brake upgrades. Whether you're looking to improve horsepower, handling, or aesthetics, we have options tailored to your vehicle’s needs.                    </p>
-                </li>
-                <li class="cs-faq-item">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                          Do I need to schedule an appointment for performance modifications?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                        Yes, we recommend scheduling an appointment to ensure we have the right parts and time available for your modifications. You can book an appointment online or give us a call to reserve a spot.
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="assets/images/samsnail.jpg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-name">
+                        Samantha Toscano
+                        <span class="cs-job">Owner of Sam's Nail Couture</span>
+                    </span>
+                </div>
+                <div class="wrapper">
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/yellow-stars.svg" alt="stars" width="96" height="16">
+                    <p class="cs-review">
+                    Great Lakes Web Designs helped me rank #1 on Google. Love the site they made. Highly recommned!
                     </p>
-                </li>
-                <li class="cs-faq-item">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                            How do I know which performance parts are right for my Mustang?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                        Our team is happy to help you choose the right upgrades based on your goals—whether that’s increasing speed, improving handling, or enhancing aesthetics. We'll work with you to find the best parts that suit your driving style and budget.                    </p>
-                </li>
-                <li class="cs-faq-item">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                            Can I get an estimate before committing to a service?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                        Absolutely! We provide free, no-obligation estimates for all performance modifications. Simply let us know what you're interested in, and we'll provide you with a detailed breakdown of the costs.                    </p>
-                </li>
-                <li class="cs-faq-item">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                            Do you offer warranties on performance parts?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                        Yes, many of our performance parts come with manufacturer warranties. Additionally, we stand behind our work and offer a satisfaction guarantee on all installations. Be sure to ask about warranty details when you purchase your parts.                    </p>
-                </li>
-            </ul>
-        </div>
+                </div>
+                <!--Quote Icon-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gray-quote.svg" decoding="async" alt="quote icon" width="120" height="99">
+            </li>
+            <li class="cs-item">
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/review2.png" decoding="async" alt="profile" width="50" height="50" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-name">
+                        Spencer Lawnson
+                        <span class="cs-job">Owner of Lawn Harmony</span>
+                    </span>
+                </div>
+                <div class="wrapper">
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/yellow-stars.svg" alt="stars" width="96" height="16">
+                    <p class="cs-review">
+                        Great service! Keshav also gives a helping hand with a lot of patience when you’re not sure. My website design is flawless.
+                    </p>
+                </div>
+                <!--Quote Icon-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gray-quote.svg" decoding="async" alt="quote icon" width="120" height="99">
+            </li>
+        </ul>
     </div>
 </section>
-                                
-                                
 
+                     
     {% include 'components/cta.html' %}
 {% endblock %}
