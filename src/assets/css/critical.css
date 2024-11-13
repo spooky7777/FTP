@@ -202,7 +202,6 @@
     padding: var(--sectionPadding);
     /* prevents padding from affecting height and  */
     box-sizing: border-box;
-    background-color: #ffffff;
   }
   #services-1191 .cs-container {
     /* changes to 1440px at desktop */
@@ -442,7 +441,6 @@
     padding: var(--sectionPadding);
     /* clips grpahics from causing overflow issues */
     overflow: hidden;
-    background-color: #f7f7f7;
   }
   #RPsbs-1163 .cs-container,
   #RPsbsr-1163 .cs-container {
@@ -1175,7 +1173,6 @@
     padding: var(--sectionPadding);
     padding-left: 0;
     padding-right: 0;
-    background-color: #f7f7f7;
   }
   #gallery-1182 .cs-container {
     width: 100%;

@@ -1,3 +1,40 @@
+---
+title: 'Services'
+description: 'Description for <meta> and OG tags'
+permalink: 'services/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/services.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1106">
+  <div class="cs-container">
+      <span class="cs-int-title">Services</span>
+      <div class="cs-breadcrumbs">
+          <a href="" class="cs-link">Home</a>
+          <a href="" class="cs-link cs-active">Services</a>
+      </div>
+  </div>
+  <!--Background Image-->
+  <picture class="cs-background">
+      <!--Mobile Image-->
+      <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
+      <!--Tablet and above Image-->
+      <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
+      <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg" alt="mechanic" width="1280" height="568" aria-hidden="true">
+  </picture>
+</div>
+
+
 <!-- ============================================ -->
 <!--                  Services                    -->
 <!-- ============================================ -->
@@ -6,9 +43,9 @@
     <div class="cs-container">
       <div class="cs-content">
         <span class="cs-topper">Our services</span>
-        <h2 class="cs-title">Together We Can Restore</h2>
+        <h2 class="cs-title">Enhancing Your Vehicle’s Performance </h2>
         <p class="cs-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur hic voluptatem quisquam deserunt temporibus dicta beatae rerum nobis esse similique!
+          We offer a full range of services, from routine maintenance and diagnostics to complete restorations and performance upgrades. Our team is dedicated to bringing out the best in your vehicle, ensuring safety, reliability, and enhanced performance.
         </p>
       </div>
       <ul class="cs-card-group">
@@ -17,11 +54,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic30.jpg">
+                  srcset="/assets/Images/img13.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic30.jpg">
+                  srcset="/assets/Images/img13.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -32,22 +69,10 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">Tire and wheel</h3>
+            <h3 class="cs-h3">Custom Exhaust Work</h3>
             <p class="cs-item-text">
-              What is Check Engine Light? There are many variations of passages of Lorem Ipsum available, but the majority have...
+              Custom exhausts are our specialty. We create tailored exhaust solutions that maximize performance, deliver a unique sound. Our team brings expertise and precision to every exhaust system, making sure it fits your vehicle perfectly and meets your performance goals.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
         <li class="cs-item">
@@ -55,11 +80,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic33.jpg">
+                  srcset="/assets/Images/img14.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic33.jpg">
+                  srcset="/assets/Images/img14.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -70,22 +95,11 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">Electrical system</h3>
+            <h3 class="cs-h3">Brake Services</h3>
             <p class="cs-item-text">
-              Our featured services Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur...
+              We offer comprehensive brake services, from repairs and replacements to high-performance upgrades. Our team ensures your brakes are safe, responsive, and suited to your driving needs.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
+
           </div>
         </li>
         <li class="cs-item">
@@ -93,11 +107,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic32.jpg">
+                  srcset="/assets/Images/img15.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic32.jpg">
+                  srcset="/assets/Images/img15.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -108,22 +122,10 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">System service</h3>
+            <h3 class="cs-h3">Engine Swaps</h3>
             <p class="cs-item-text">
-              Our services Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni...
+              We handle complete engine swaps, giving your vehicle a new heart with improved power and performance. Our team manages every detail, ensuring a precise fit and optimal functionality for a seamless upgrade.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
         <li class="cs-item">
@@ -131,11 +133,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic31.jpg">
+                  srcset="/assets/Images/img16.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic31.jpg">
+                  srcset="/assets/Images/img16.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -146,22 +148,10 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">Engine diagnostics</h3>
+            <h3 class="cs-h3">Suspension Services</h3>
             <p class="cs-item-text">
-              What is Check Engine Light? There are many variations of passages of Lorem Ipsum available, but the majority have...
+              Our suspension services provide a smoother, more controlled ride with custom solutions tailored to your driving style. From upgrades to repairs, we enhance handling, stability, and comfort for a superior driving experience.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
         <li class="cs-item">
@@ -169,11 +159,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic30.jpg">
+                  srcset="/assets/Images/img8.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic30.jpg">
+                  srcset="/assets/Images/img8.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -184,22 +174,10 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">Tire and wheel</h3>
+            <h3 class="cs-h3">Forced Induction</h3>
             <p class="cs-item-text">
-              What is Check Engine Light? There are many variations of passages of Lorem Ipsum available, but the majority have...
+              Boost your vehicle’s power with our forced induction services. We specialize in installing and tuning superchargers and turbochargers to deliver maximum horsepower and torque. Our team ensures a precise setup for reliable, high-performance gains.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
         <li class="cs-item">
@@ -207,11 +185,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic33.jpg">
+                  srcset="/assets/Images/img17.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic33.jpg">
+                  srcset="/assets/Images/img17.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -222,22 +200,10 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">Electrical system</h3>
+            <h3 class="cs-h3">Wheels & Tires</h3>
             <p class="cs-item-text">
-              Our featured services Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur...
+              We offer a wide selection of wheels and tires to enhance your vehicle’s appearance and performance. From custom wheels to tire replacements, our team ensures the perfect fit for improved handling, safety, and style.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
         <li class="cs-item">
@@ -245,11 +211,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic32.jpg">
+                  srcset="/assets/Images/img18.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic32.jpg">
+                  srcset="/assets/Images/img18.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -260,22 +226,10 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">System service</h3>
+            <h3 class="cs-h3">Clutch Upgrades</h3>
             <p class="cs-item-text">
-              Our services Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni...
+              Our clutch upgrade services are designed to handle more power and provide smoother shifting. Whether you're upgrading for performance or durability, our team ensures a perfect fit to enhance your driving experience and keep your transmission performing at its best.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
         <li class="cs-item">
@@ -283,11 +237,11 @@
             <!--Mobile Image-->
             <source
                   media="(max-width: 600px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic31.jpg">
+                  srcset="/assets/Images/img19.jpg">
             <!--Tablet and above Image-->
             <source
                   media="(min-width: 601px)"
-                  srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic31.jpg">
+                  srcset="/assets/Images/img19.jpg">
             <img
                   loading="lazy"
                   decoding="async"
@@ -298,25 +252,15 @@
                   aria-hidden="true">
           </picture>
           <div class="cs-info">
-            <h3 class="cs-h3">Engine diagnostics</h3>
+            <h3 class="cs-h3">General Repairs</h3>
             <p class="cs-item-text">
-              What is Check Engine Light? There are many variations of passages of Lorem Ipsum available, but the majority have...
+              We provide reliable general repair services for all makes and models. From routine maintenance to complex fixes, our team ensures your vehicle stays in top condition, keeping you safe and on the road.
             </p>
-            <a href="" class="cs-link">
-              Read More
-              <img
-                    class="cs-arrow"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/red-arrow-right.svg"
-                    alt="icon"
-                    width="20"
-                    height="20"
-                    aria-hidden="true">
-            </a>
           </div>
         </li>
       </ul>
     </div>
 </section>
-                                
+{% include 'components/cta.html' %}
+
+{% endblock %}                               
