@@ -386,6 +386,10 @@
   body.dark-mode #contact-1107 .cs-ul:before {
     opacity: 0.3;
   }
+  body.dark-mode #contact-1107 .cs-submit {
+    background-color: var(--accent);
+    color: white;
+  }
 }
 /*-- -------------------------- -->
 <---          Footer            -->

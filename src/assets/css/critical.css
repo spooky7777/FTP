@@ -658,6 +658,10 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode #RPsbs-1163,
+  body.dark-mode #RPsbsr-1163 {
+    background-color: #181818;
+  }
   body.dark-mode #RPsbs-1163 .cs-title,
   body.dark-mode #RPsbsr-1163 .cs-title,
   body.dark-mode #RPsbs-1163 .cs-text,
@@ -1236,6 +1240,9 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode #gallery-1182 {
+    background-color: #181818;
+  }
   body.dark-mode #gallery-1182 .cs-title {
     color: var(--bodyTextColorWhite);
   }
@@ -1527,6 +1534,10 @@
   }
   body.dark-mode #contact-1333 .cs-graphic {
     opacity: 0.4;
+  }
+  body.dark-mode #contact-1333 .cs-submit {
+    background-color: var(--accent);
+    color: white;
   }
 }
 /*-- -------------------------- -->

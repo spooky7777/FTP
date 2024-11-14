@@ -7,7 +7,7 @@
   :root {
     --dark: #121212;
     --medium: #D90429;
-    --accent: #D90429;
+    --accent: #121212;
   }
   body.dark-mode {
     background-color: var(--dark);
