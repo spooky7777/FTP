@@ -150,20 +150,35 @@ eleventyNavigation:
                                 
           
 <!-- ============================================ -->
-<!--                     FAQ                      -->
+<!--                   Contact                    -->
 <!-- ============================================ -->
 
-<section id="faq-1194">
+<section id="contact-1333">
     <div class="cs-container">
-        <div class="cs-image-group">
-            <picture class="cs-picture cs-picture1">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img11.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img11.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img11.jpg" alt="body shop" width="522" height="609" aria-hidden="true">
-            </picture>
-        </div>
+        <!--Form-->
+        <form class="cs-form" id="cs-form-1333" name="Contact Form" method="post">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h2 class="cs-title">Make Appointment</h2>
+            </div>
+            <label class="cs-label">
+                Name
+                <input class="cs-input" required type="text" id="name-1333" name="name" placeholder="Name">
+            </label>
+            <label class="cs-label cs-email">
+                Email
+                <input class="cs-input" required type="email" id="email-1333" name="email" placeholder="Email">
+            </label>
+            <label class="cs-label cs-phone">
+                Phone
+                <input class="cs-input" required type="number" id="phone-1333" name="phone" placeholder="Phone">
+            </label>
+            <label class="cs-label">
+                Message
+                <textarea class="cs-input cs-textarea" required name="Message" id="message-1333" placeholder="Write message..."></textarea>
+            </label>
+            <button class="cs-button-solid cs-submit" type="submit">Schedule Appointment</button>
+        </form>
         <div class="cs-content">
             <span class="cs-topper">Asked Questions</span>
             <h2 class="cs-title">Frequently Asked Questions</h2>
@@ -223,8 +238,18 @@ eleventyNavigation:
             </ul>
         </div>
     </div>
-    
-</section>
+
+
+    <script>
+    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+            item.classList.toggle('active')
+        }
+        item.addEventListener('click', onClick)
+        }
+     </script>
+</section>  
                                 
                          
 

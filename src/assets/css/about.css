@@ -653,79 +653,185 @@
   }
 }
 /*-- -------------------------- -->
-<---            FAQ             -->
+<---          Contact           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #faq-1194 {
+  #contact-1333 {
     padding: var(--sectionPadding);
     position: relative;
-    overflow: hidden;
+    z-index: 1;
   }
-  #faq-1194 .cs-container {
+  #contact-1333 .cs-container {
     width: 100%;
-    /* chnages to 1280px at desktop */
+    /* changes to 1280px at desktop */
     max-width: 36.5rem;
     margin: auto;
     display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    /* 48px - 80px */
+    gap: clamp(3rem, 6vw, 5rem);
+    position: relative;
+  }
+  #contact-1333 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #contact-1333 .cs-title {
+    max-width: 23ch;
+    margin: 0 0 1.75rem 0;
+  }
+  #contact-1333 .cs-form {
+    width: 100%;
+    max-width: 40.625rem;
+    /* 32px - 48px top and bottom */
+    /* 16px - 60px left and right */
+    padding: clamp(2rem, 5.18vw, 3rem) clamp(1rem, 5vw, 3.75rem);
+    /* prevents flexbox from affecting height and width */
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    /* prevents flexbox from squishing it */
+    flex: none;
+    gap: 0.75rem;
+  }
+  #contact-1333 .cs-form .cs-title {
+    /* 16px - 28px */
+    margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+  }
+  #contact-1333 .cs-label {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    color: var(--headerColor);
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    /* 40px - 48px */
-    gap: clamp(2.5rem, 5vw, 3rem);
+    align-items: flex-start;
+    gap: 0.25rem;
   }
-  #faq-1194 .cs-content {
-    text-align: left;
-    max-width: 39.375rem;
+  #contact-1333 .cs-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0;
+    padding-left: 1.5rem;
+    color: var(--headerColor);
+    background-color: #fff;
+    border: none;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
   }
-  #faq-1194 .cs-title {
-    /* 20 characters wide including spaces */
-    max-width: 20ch;
-    margin: 0 0 2rem 0;
+  #contact-1333 .cs-input::placeholder {
+    color: #767676;
+    opacity: 0.6;
   }
-  #faq-1194 .cs-faq-group {
+  #contact-1333 .cs-textarea {
+    min-height: 7.5rem;
+    padding-top: 1.5rem;
+    /* 16px - 28px */
+    margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+    font-family: inherit;
+  }
+  #contact-1333 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #ffffff;
+    border: none;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    transition: color 0.3s;
+  }
+  #contact-1333 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #contact-1333 .cs-button-solid:hover {
+    color: #fff;
+  }
+  #contact-1333 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #contact-1333 .cs-submit {
+    width: 100%;
+    min-width: 17.6875rem;
+  }
+  #contact-1333 .cs-submit:hover {
+    cursor: pointer;
+  }
+  #contact-1333 .cs-faq-group {
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
   }
-  #faq-1194 .cs-faq-item {
+  #contact-1333 .cs-faq-item {
     list-style: none;
     width: 100%;
-    background-color: #f7f7f7;
-    padding: 1.25rem;
-    box-sizing: border-box;
+    border-bottom: 1px solid #e8e8e8;
     transition: border-bottom 0.3s;
   }
-  #faq-1194 .cs-faq-item.active {
-    border-color: var(--primaryLight);
+  #contact-1333 .cs-faq-item.active {
+    border-color: var(--primary);
   }
-  #faq-1194 .cs-faq-item.active .cs-button {
+  #contact-1333 .cs-faq-item.active .cs-button {
     color: var(--primary);
   }
-  #faq-1194 .cs-faq-item.active .cs-button:before {
-    background-color: var(--primaryLight);
+  #contact-1333 .cs-faq-item.active .cs-button:before {
+    background-color: var(--primary);
     transform: rotate(315deg);
   }
-  #faq-1194 .cs-faq-item.active .cs-button:after {
-    background-color: var(--primaryLight);
+  #contact-1333 .cs-faq-item.active .cs-button:after {
+    background-color: var(--primary);
     transform: rotate(-315deg);
   }
-  #faq-1194 .cs-faq-item.active .cs-item-p {
+  #contact-1333 .cs-faq-item.active .cs-item-p {
     height: auto;
-    padding-top: 1rem;
+    /* 20px - 24px bottom */
+    /* 16px - 24px left & right */
+    padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.5rem) 0;
     opacity: 1;
   }
-  #faq-1194 .cs-button {
-    /* 16px - 20px */
-    font-size: clamp(1rem, 2vw, 1.25rem);
+  #contact-1333 .cs-button {
+    font-size: 1rem;
     line-height: 1.2em;
     text-align: left;
     font-weight: bold;
-    padding: 0;
+    /* 16px - 24px */
+    padding: clamp(1rem, 2vw, 1.5rem);
+    padding-left: 0;
     border: none;
     background: transparent;
     color: var(--headerColor);
@@ -734,10 +840,10 @@
     position: relative;
     transition: background-color 0.3s, color 0.3s;
   }
-  #faq-1194 .cs-button:hover {
+  #contact-1333 .cs-button:hover {
     cursor: pointer;
   }
-  #faq-1194 .cs-button:before {
+  #contact-1333 .cs-button:before {
     /* left line */
     content: "";
     width: 0.5rem;
@@ -748,13 +854,13 @@
     position: absolute;
     display: block;
     top: 45%;
-    right: 0.25rem;
+    right: 1.5rem;
     transform: rotate(45deg);
     /* animate the transform from the left side of the x axis, and the center of the y */
     transform-origin: left center;
     transition: transform 0.5s;
   }
-  #faq-1194 .cs-button:after {
+  #contact-1333 .cs-button:after {
     /* right line */
     content: "";
     width: 0.5rem;
@@ -765,123 +871,78 @@
     position: absolute;
     display: block;
     top: 45%;
-    right: 0.0625rem;
+    right: 1.3125rem;
     transform: rotate(-45deg);
     /* animate the transform from the right side of the x axis, and the center of the y */
     transform-origin: right center;
     transition: transform 0.5s;
   }
-  #faq-1194 .cs-button-text {
-    width: 90%;
+  #contact-1333 .cs-button-text {
+    width: 80%;
     display: block;
   }
-  #faq-1194 .cs-item-p {
+  #contact-1333 .cs-item-p {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     line-height: 1.5em;
     width: 90%;
-    max-width: 33.8125rem;
     height: 0;
     margin: 0;
-    padding: 0;
+    /* 16px - 24px */
+    padding: 0 clamp(1rem, 2vw, 1.5rem);
     opacity: 0;
     color: var(--bodyTextColor);
     /* clips the text so it doesn't show up */
     overflow: hidden;
     transition: opacity 0.3s, padding-bottom 0.3s;
   }
-  #faq-1194 .cs-image-group {
-    /* we use ems for everything in the container so they pull their value for em from the font size of this parent instead of the root element (html). This font size scales with the view width of the screen and stops when the font size equals the value of 1em (16px) and stops growing */
-    font-size: min(2.43vw, 1em);
-    width: 37.375em;
-    height: 42.375em;
-    display: block;
-    position: relative;
-  }
-  #faq-1194 .cs-picture {
-    display: block;
-    position: absolute;
-    z-index: 1;
-  }
-  #faq-1194 .cs-picture1 {
-    width: 32.625em;
-    height: 38.0625em;
-    top: 0;
-    right: 0;
-  }
-  #faq-1194 .cs-picture1 img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  #faq-1194 .cs-picture2 {
-    width: 25em;
-    height: 40.625em;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    bottom: 0;
-    left: 0;
-  }
-  #faq-1194 .cs-picture2 img {
-    width: auto;
-    height: 100%;
-    max-height: 40.625rem;
-    object-fit: contain;
-  }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #faq-1194 .cs-container {
+  #contact-1333 .cs-container {
     max-width: 80rem;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
   }
-  #faq-1194 .cs-content {
-    width: 55%;
+  #contact-1333 .cs-form {
+    width: 45vw;
   }
-  #faq-1194 .cs-image-group {
-    font-size: min(1.4vw, 1em);
-    height: 42.375rem;
-    /* sends it to the right in the 2nd position */
-    order: 2;
-  }
-  #faq-1194 .cs-picture1 {
-    height: 90%;
+  #contact-1333 .cs-submit {
+    width: auto;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #faq-1194 .cs-title,
-  body.dark-mode #faq-1194 .cs-item-p {
+  body.dark-mode #contact-1333 .cs-title,
+  body.dark-mode #contact-1333 .cs-item-p,
+  body.dark-mode #contact-1333 .cs-button,
+  body.dark-mode #contact-1333 label {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #faq-1194 .cs-item-p {
+  body.dark-mode #contact-1333 .cs-button:before,
+  body.dark-mode #contact-1333 .cs-button:after {
+    background-color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #contact-1333 .cs-item-p {
     opacity: 0.8;
   }
-  body.dark-mode #faq-1194 .cs-faq-item {
-    background-color: rgba(0, 0, 0, 0.4);
+  body.dark-mode #contact-1333 .cs-form {
+    background-color: var(--medium);
   }
-  body.dark-mode #faq-1194 .cs-faq-item.active {
-    border-color: var(--bodyTextColorWhite);
+  body.dark-mode #contact-1333 .cs-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
   }
-  body.dark-mode #faq-1194 .cs-faq-item.active .cs-button {
-    color: var(--secondary);
+  body.dark-mode #contact-1333 .cs-input::placeholder {
+    color: #fff;
+    opacity: 0.8;
   }
-  body.dark-mode #faq-1194 .cs-faq-item.active .cs-button:before,
-  body.dark-mode #faq-1194 .cs-faq-item.active .cs-button:after {
-    background-color: var(--secondary);
+  body.dark-mode #contact-1333 .cs-graphic {
+    opacity: 0.4;
   }
-  body.dark-mode #faq-1194 .cs-button {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #faq-1194 .cs-button:before,
-  body.dark-mode #faq-1194 .cs-button:after {
-    background-color: var(--bodyTextColorWhite);
+  body.dark-mode #contact-1333 .cs-submit {
+    background-color: var(--accent);
+    color: white;
   }
 }
 /*-- -------------------------- -->
