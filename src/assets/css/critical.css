@@ -411,7 +411,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #services-1191 .cs-topper {
-    color: var(--primaryLight);
+    color: #D90429;
   }
   body.dark-mode #services-1191 .cs-text,
   body.dark-mode #services-1191 .cs-item-text {
@@ -1348,7 +1348,7 @@
     font-weight: 700;
     text-align: center;
     margin: 0;
-    color: #1a1a1a;
+    color: #ffffff;
     border: none;
     min-width: 9.375rem;
     padding: 0 1.5rem;
@@ -1729,5 +1729,6 @@
   }
   #cs-footer-1104 .cs-text {
     width: 100%;
+    color: var(--bodyTextColorWhite);
   }
 }
