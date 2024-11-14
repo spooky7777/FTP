@@ -490,30 +490,33 @@ eleventyNavigation:
                 <li class="cs-faq-item active">
                     <button class="cs-button">
                         <span class="cs-button-text">
-                           What types of performance upgrades do you offer?
+                            What types of performance upgrades do you offer?
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        We offer a variety of upgrades, including performance exhaust systems, cold air intakes, superchargers, suspension kits, and brake upgrades. Whether you're looking to improve horsepower, handling, or aesthetics, we have options tailored to your vehicle’s needs.                    </p>
-                </li>
-                <li class="cs-faq-item">
-                    <button class="cs-button">
-                        <span class="cs-button-text">
-                          Do I need to schedule an appointment for performance modifications?
-                        </span>
-                    </button>
-                    <p class="cs-item-p">
-                        Yes, we recommend scheduling an appointment to ensure we have the right parts and time available for your modifications. You can book an appointment online or give us a call to reserve a spot.
+                        We offer a variety of upgrades, including performance exhaust systems, cold air intakes, superchargers, suspension kits, and brake upgrades. Whether you're looking to improve horsepower, handling, or aesthetics, we have options tailored to your vehicle’s needs.   
                     </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
                         <span class="cs-button-text">
-                            How do I know which performance parts are right for my Mustang?
+                            Do I need to schedule an appointment for performance modifications?
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        Our team is happy to help you choose the right upgrades based on your goals—whether that’s increasing speed, improving handling, or enhancing aesthetics. We'll work with you to find the best parts that suit your driving style and budget.                    </p>
+                        Yes, we recommend scheduling an appointment to ensure we have the right parts and time available for your modifications. You can book an appointment online or give us a call to reserve a spot.
+
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How do I know which performance parts are right for my Vehicle?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Our team is happy to help you choose the right upgrades based on your goals—whether that’s increasing speed, improving handling, or enhancing aesthetics. We'll work with you to find the best parts that suit your driving style and budget.
+                    </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
@@ -522,7 +525,8 @@ eleventyNavigation:
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        Absolutely! We provide free, no-obligation estimates for all performance modifications. Simply let us know what you're interested in, and we'll provide you with a detailed breakdown of the costs.                    </p>
+                        Absolutely! We provide free, no-obligation estimates for all performance modifications. Simply let us know what you're interested in, and we'll provide you with a detailed breakdown of the costs.
+                    </p>
                 </li>
                 <li class="cs-faq-item">
                     <button class="cs-button">
@@ -531,14 +535,24 @@ eleventyNavigation:
                         </span>
                     </button>
                     <p class="cs-item-p">
-                        Yes, many of our performance parts come with manufacturer warranties. Additionally, we stand behind our work and offer a satisfaction guarantee on all installations. Be sure to ask about warranty details when you purchase your parts.                    </p>
+                        Yes, many of our performance parts come with manufacturer warranties. Additionally, we stand behind our work and offer a satisfaction guarantee on all installations. Be sure to ask about warranty details when you purchase your parts.  
+                    </p>
                 </li>
             </ul>
         </div>
     </div>
-</section>
-                                
-                                
+
+
+    <script>
+    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+            item.classList.toggle('active')
+        }
+        item.addEventListener('click', onClick)
+        }
+     </script>
+</section>                        
 
     {% include 'components/cta.html' %}
 {% endblock %}
