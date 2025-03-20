@@ -44,64 +44,44 @@ eleventyNavigation:
 <!--                   Contact                    -->
 <!-- ============================================ -->
 
-<section id="contact-1107">
+<section id="contact-984">
     <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Contact Us</span>
-            <h2 class="cs-title">Get In Touch</h2>
-            <!--Form-->
-            <form class="cs-form" id="cs-form-1107" name="Contact Form" method="post">
-                <label class="cs-label">
-                    Name
-                    <input class="cs-input" required type="text" id="name-1107" name="name" placeholder="Name">
-                </label>
-                <label class="cs-label cs-email">
-                    Email
-                    <input class="cs-input" required type="email" id="email-1107" name="email" placeholder="Email">
-                </label>
-                <label class="cs-label cs-phone">
-                    Phone
-                    <input class="cs-input" required type="phone" id="phone-1107" name="phone" placeholder="Phone">
-                </label>
-                <label class="cs-label">
-                    Message
-                    <textarea class="cs-input cs-textarea" required name="Message" id="message-1107" placeholder="Write message..."></textarea>
-                </label>
-                <button class="cs-button-solid cs-submit" type="submit">Get In Touch</button>
-            </form>
-        </div>
-        <ul class="cs-ul">
-            <li class="cs-li">
-                <picture class="cs-icon-wrapper">
-                    <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone icon" class="cs-icon" width="40" height="40" decoding="async">
-                </picture>
-                <div class="cs-flex-group">
-                    <span class="cs-header">Phone</span>
-                    <a href="tel:317-938-3587
-                    " class="cs-link">(317) 938-3587
-                    </a>
-                </div>
-            </li>
-            <li class="cs-li">
-                <picture class="cs-icon-wrapper">
-                    <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-email.svg" alt="mail icon" class="cs-icon" width="40" height="40" decoding="async">
-                </picture>
-                <div class="cs-flex-group">
-                    <span class="cs-header">Email</span>
-                    <a href="mailto:sales@fullthrottleperformance.com" class="cs-link">sales@fullthrottleperformance.com</a>
-                </div>
-            </li>
-            <li class="cs-li">
-                <picture class="cs-icon-wrapper">
-                    <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
-                </picture>
-                <div class="cs-flex-group">
-                    <span class="cs-header">Address</span>
-                    <a href="" class="cs-link">4444 Decatur Blvd STE 400, Indianapolis, IN 46241</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/img1.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/img1.jpg">
+            <img loading="lazy" decoding="async" src="/assets/images/img1.jpg" alt="friends" width="904" height="754">
+        </picture>
+        <div class="cs-right">
+            <div class="cs-content">
+            </div>
+            <section id="cs-contact-490">
+                <div class="cs-container">
+                    <!-- Contact Info -->
+                    <div class="cs-content">
+                        <span class="cs-topper">Contact Us</span>
+                        <h2 class="cs-title">Contact Information</h2>
+                        <p class="cs-text">
+                            We are here to help you with all your performance needs. Whether you have questions about our products, need assistance, or want to learn more about our services, feel free to reach out to us.
+                        </p>
+                        
+                        <!--Address-->
+                        <span class="cs-header">Address</span>
+                        <a href="" class="cs-link">
+                            4444 Decatur Blvd STE 400, <br>Indianapolis, IN 46241
+                        </a>
+                        <!--Email-->
+                        <span class="cs-header">Email</span>
+                        <a href="mailto:sales@fullthrottleperformance.com" class="cs-link">sales@fullthrottleperformance.com</a>
+                        <!--Phone-->
+                        <span class="cs-header">Phone</span>
+                        <a href="tel:317-938-3587" class="cs-link">(317)-938-3587</a>
+            
+                    
+                        </div>
+                    </div>
 </section>
+                                                        
                                 
 {% endblock %}

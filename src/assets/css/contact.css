@@ -111,228 +111,49 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #contact-1107 {
-    padding: var(--sectionPadding);
+  #contact-984 {
     position: relative;
     z-index: 1;
   }
-  #contact-1107 .cs-container {
+  #contact-984 .cs-container {
     width: 100%;
-    /* changes to 1280px at desktop */
-    max-width: 36.5rem;
+    max-width: 62.5rem;
     margin: auto;
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-    /* 48px - 80px */
-    gap: clamp(3rem, 6vw, 5rem);
-  }
-  #contact-1107 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: left;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
-  }
-  #contact-1107 .cs-title {
-    margin: 0 0 2rem 0;
-  }
-  #contact-1107 .cs-form {
-    width: 100%;
-    /* 24px - 48px top and bottom */
-    /* 20px - 32px left and right */
-    padding: clamp(1.5rem, 3vw, 3rem) clamp(1.25rem, 3.18vw, 2rem);
-    /* prevents flexbox from affecting height and width */
-    box-sizing: border-box;
-    background-color: #f7f8f8;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem;
-  }
-  #contact-1107 .cs-label {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    width: 100%;
-    color: var(--headerColor);
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0.25rem;
+    gap: 3rem;
   }
-  #contact-1107 .cs-input {
-    font-size: 1rem;
-    width: 100%;
-    height: 3.5rem;
-    padding: 0;
-    padding-left: 1.5rem;
-    color: var(--headerColor);
-    background-color: #fff;
-    border: none;
-    /* prevents padding from adding to height and width */
-    box-sizing: border-box;
+  #contact-984 .cs-text {
+    /* 16px - 48px */
+    margin: 0 0 clamp(1rem, 4.4vw, 3rem) 0;
   }
-  #contact-1107 .cs-input::placeholder {
-    color: #7d799c;
-    opacity: 0.6;
-  }
-  #contact-1107 .cs-textarea {
-    min-height: 7.5rem;
-    padding-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-family: inherit;
-  }
-  #contact-1107 .cs-button-solid {
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
+  #contact-984 .cs-link {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 2vw, 1.25rem);
     text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    color: #fff;
-    border: none;
-    min-width: 9.375rem;
-    padding: 0 1.5rem;
-    background-color: var(--primary);
-    border-radius: 0.25rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    transition: color 0.3s;
-  }
-  #contact-1107 .cs-button-solid:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 0.25rem;
-    transition: width 0.3s;
-  }
-  #contact-1107 .cs-button-solid:hover {
-    color: #fff;
-  }
-  #contact-1107 .cs-button-solid:hover:before {
-    width: 100%;
-  }
-  #contact-1107 .cs-submit {
-    min-width: 17.6875rem;
-    border-radius: 0;
-  }
-  #contact-1107 .cs-submit:hover {
-    cursor: pointer;
-  }
-  #contact-1107 .cs-ul {
-    width: auto;
-    /* 40px - 92px, marign bottom and left are the same clamp values that the stripes box is absolutely positioned outside the cs-ul box */
-    margin-bottom: clamp(2.5rem, 9vw, 5.75rem);
-    /* 32px - 80px */
-    margin-right: clamp(2rem, 9vw, 5rem);
-    /* 40px - 100px top and bottom */
-    /* 16px - 80px left and right */
-    padding: clamp(2.5rem, 9.18vw, 6.25rem) clamp(1rem, 9.18vw, 5rem);
-    box-sizing: border-box;
-    background-color: #f7f7f7;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* 40px - 60px */
-    gap: clamp(1.5rem, 6vw, 3.75rem);
-    position: relative;
-  }
-  #contact-1107 .cs-ul:before {
-    /* stripes graphic */
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/stripes-contact.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    /* 40px - 92px */
-    top: clamp(2.5rem, 9vw, 5.75rem);
-    /* 32px - 80px */
-    left: clamp(2rem, 9vw, 5rem);
-    z-index: -1;
-  }
-  #contact-1107 .cs-li {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    /* 12px - 20px */
-    gap: clamp(0.75rem, 2vw, 1.25rem);
-  }
-  #contact-1107 .cs-li:hover .cs-icon-wrapper {
-    transform: scale(1.1);
-  }
-  #contact-1107 .cs-header {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
-    font-weight: 700;
-    line-height: 1.2em;
-    margin-bottom: 0.5rem;
-    color: var(--headerColor);
-    display: block;
-  }
-  #contact-1107 .cs-link {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.5em;
-    text-decoration: none;
-    color: #767676;
+    font-weight: 700;
+    /* 16px - 32px */
+    margin: 0 0 clamp(1rem, 2.5vw, 2rem);
+    color: var(--headerColor);
     display: block;
-    position: relative;
   }
-  #contact-1107 .cs-link:hover {
+  #contact-984 .cs-link:hover {
     text-decoration: underline;
   }
-  #contact-1107 .cs-icon-wrapper {
-    /* 44px - 80px */
-    width: clamp(2.75rem, 8.3vw, 5rem);
-    height: clamp(2.75rem, 8.3vw, 5rem);
-    margin: 0;
-    border-radius: 50%;
-    border: 1px solid #bababa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* prevents flexbox from squishing it */
-    flex: none;
-    transition: transform 0.3s;
+  #contact-984 .cs-link:last-of-type {
+    margin-bottom: 0;
   }
-  #contact-1107 .cs-icon {
-    /* 20px - 40px */
-    width: clamp(1.25rem, 3vw, 2.5rem);
-    height: auto;
-    display: block;
-  }
-  #contact-1107 .cs-picture {
-    width: 100%;
-    border-radius: 0.5rem;
-    /* clips image corners */
-    overflow: hidden;
+  #contact-984 .cs-picture {
     display: block;
     position: relative;
-    /* width divided height */
-    aspect-ratio: 288/200;
+    width: 100%;
+    /* 360px - 600px */
+    height: clamp(22.5rem, 100vw, 37.5rem);
   }
-  #contact-1107 .cs-img {
+  #contact-984 .cs-picture img {
     position: absolute;
     top: 0;
     left: 0;
@@ -341,54 +162,59 @@
     object-fit: cover;
   }
 }
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #contact-1107 .cs-container {
-    max-width: 80rem;
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #contact-984 {
+    padding: var(--sectionPadding);
+    position: relative;
+  }
+  #contact-984 .cs-container {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
-  #contact-1107 .cs-content {
-    max-width: 33.875rem;
+  #contact-984 .cs-form {
+    max-width: 39.375rem;
   }
-  #contact-1107 .cs-ul {
-    max-width: 32.0625rem;
+  #contact-984 .cs-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+  #contact-984 .cs-form {
+    align-items: flex-start;
+  }
+  #contact-984 .cs-picture {
+    position: absolute;
+    height: 100%;
+    width: 44%;
+    right: 50%;
+    /* 70px - 88px */
+    margin-right: clamp(4.375rem, 7vw, 5.5rem);
+  }
+  #contact-984 .cs-right {
+    width: 50%;
+    max-width: 39.375rem;
+    padding: 0;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #contact-1107 .cs-title,
-  body.dark-mode #contact-1107 .cs-text,
-  body.dark-mode #contact-1107 .cs-header,
-  body.dark-mode #contact-1107 .cs-link {
+  body.dark-mode #contact-984 .cs-title,
+  body.dark-mode #contact-984 .cs-text,
+  body.dark-mode #contact-984 .cs-label,
+  body.dark-mode #contact-984 .cs-link {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #contact-1107 .cs-link {
-    opacity: 0.8;
-  }
-  body.dark-mode #contact-1107 .cs-form {
-    background-color: var(--medium);
-  }
-  body.dark-mode #contact-1107 .cs-label {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #contact-1107 .cs-input {
+  body.dark-mode #contact-984 .cs-input {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--bodyTextColorWhite);
+    border-color: rgba(255, 255, 255, 0.1);
   }
-  body.dark-mode #contact-1107 .cs-input::placeholder {
+  body.dark-mode #contact-984 .cs-input:hover {
+    border-color: var(--secondary);
+  }
+  body.dark-mode #contact-984 .cs-input::placeholder {
     color: #fff;
     opacity: 0.5;
-  }
-  body.dark-mode #contact-1107 .cs-ul {
-    background-color: var(--medium);
-  }
-  body.dark-mode #contact-1107 .cs-ul:before {
-    opacity: 0.3;
-  }
-  body.dark-mode #contact-1107 .cs-submit {
-    background-color: var(--accent);
-    color: white;
   }
 }
 /*-- -------------------------- -->
@@ -578,5 +404,6 @@
   }
   #cs-footer-1104 .cs-text {
     width: 100%;
+    color: white;
   }
 }
