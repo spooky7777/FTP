@@ -7,8 +7,8 @@ date: 2023-06-08T15:28:08.486Z
 tags:
     - post
     - featured
-image: /assets/images/blog/landing.jpg
-imageAlt: Kitchen
+image: /assets/images/optimized/gallery-10-desktop.jpg
+imageAlt: Classic Chevrolet Corvette
 ---
 
 ## Aut inter Petraeum

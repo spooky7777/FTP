@@ -162,8 +162,7 @@
     font-family: "Roboto";
     font-weight: 400;
     font-display: swap;
-    src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff");
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2");
   }
   /* roboto-700 - latin */
   @font-face {
@@ -171,8 +170,7 @@
     font-family: "Roboto";
     font-weight: 700;
     font-display: swap;
-    src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff");
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2");
   }
   /* roboto-900 - latin */
   @font-face {
@@ -180,8 +178,23 @@
     font-family: "Roboto";
     font-weight: 900;
     font-display: swap;
-    src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff");
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2");
+  }
+}
+/* Preserve clear keyboard focus without introducing another brand color. */
+:focus-visible {
+  outline: 0.1875rem solid currentColor;
+  outline-offset: 0.25rem;
+}
+/* Respect visitors who request less interface motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 /* Reset Margins */

@@ -6,8 +6,8 @@ author: Code Stitch
 date: 2023-06-08T15:27:34.591Z
 tags:
     - post
-image: /assets/images/blog/landing.jpg
-imageAlt: Kitchen
+image: /assets/images/optimized/gallery-11-desktop.jpg
+imageAlt: Classic V8 engine
 ---
 
 ## Hospes meus

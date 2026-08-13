@@ -1,8 +1,12 @@
 ---
-title: 'About | Full Throttle Performance'
-description: 'Meta description for the page'
-preloadImg: ''
+title: 'About Our Performance Shop | Full Throttle Performance'
+description: 'Learn about Full Throttle Performance, an Indianapolis performance and mechanic shop serving all makes and models with Mustang expertise, upgrades, repairs, and maintenance.'
+preloadImg: '/assets/images/optimized/banner-desktop.webp'
+preloadImgMobile: '/assets/images/optimized/banner-mobile.webp'
 permalink: 'about/'
+sitemap:
+    lastmod: 2026-08-13
+    priority: 0.8
 eleventyNavigation:
     key: About Us
     order: 200
@@ -11,7 +15,9 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/about.css">
+    <link rel="stylesheet" href="/assets/css/about-critical.css">
+    <link rel="stylesheet" href="/assets/css/about.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="/assets/css/about.css"></noscript>
 {% endblock %}
 
 {% block body %}
@@ -21,19 +27,21 @@ eleventyNavigation:
 
 <div id="banner-1106-1112">
     <div class="cs-container">
-        <span class="cs-int-title">About Us</span>
+        <h1 class="cs-int-title">About Us</h1>
         <div class="cs-breadcrumbs">
-            <a href="" class="cs-link">Home</a>
-            <a href="" class="cs-link cs-active">Contact</a>
+            <a href="/" class="cs-link">Home</a>
+            <span class="cs-link cs-active" aria-current="page">About Us</span>
         </div>
     </div>
     <!--Background Image-->
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
+        <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.webp">
+        <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.webp">
+        <source media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.jpg">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
-        <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg" alt="mechanic" width="1280" height="568" aria-hidden="true">
+        <source media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.jpg">
+        <img decoding="async" src="/assets/images/optimized/banner-desktop.jpg" alt="" width="1600" height="560" aria-hidden="true" fetchpriority="high">
     </picture>
 </div>
 
@@ -47,13 +55,15 @@ eleventyNavigation:
             <!--Top left image-->
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img1.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/about-shop-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/about-shop-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/about-shop-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img1.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img1.jpg" alt="mechanic" width="542" height="608">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/about-shop-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/about-shop-desktop.jpg" alt="Full Throttle Performance shop exterior" width="680" height="760">
             </picture>
             <!--Stripe background-->
-            <img class="cs-stripes" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/stripes-long.svg" alt="stripes" width="522" height="608" aria-hidden="true">
+            <img class="cs-stripes" loading="lazy" decoding="async" src="/assets/svgs/icons/stripes-long.svg" alt="" width="522" height="608" aria-hidden="true">
         </div>
         <div class="cs-content">
             <span class="cs-topper">Auto Performance since 2000</span>
@@ -68,7 +78,6 @@ eleventyNavigation:
                 <li class="cs-li">Proven results for setting exceptional standards</li>
                 <li class="cs-li">Fast, Reliable Service</li>
             </ul>
-            </div>
         </div>
     </div>
 </section>
@@ -83,21 +92,25 @@ eleventyNavigation:
             <!--Top left image-->
             <picture class="cs-picture cs-picture1">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img8.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/about-engine-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/about-engine-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/about-engine-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img8.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img8.jpg" alt="appliance" width="323" height="447">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/about-engine-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/about-engine-desktop.jpg" alt="Performance engine assembly" width="600" height="820">
             </picture>
             <!--Bottom right image-->
             <picture class="cs-picture cs-picture2">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img5.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/about-building-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/about-building-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/about-building-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img5.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img5.jpg" alt="appliance" width="305" height="441">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/about-building-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/about-building-desktop.jpg" alt="Vehicles outside the Full Throttle Performance shop" width="600" height="820">
             </picture>
             <!--Stripe background-->
-            <img class="cs-stripes" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/stripes-short.svg" alt="stripes" width="548" height="487" aria-hidden="true">
+            <img class="cs-stripes" loading="lazy" decoding="async" src="/assets/svgs/icons/stripes-short.svg" alt="" width="548" height="487" aria-hidden="true">
         </div>
         <div class="cs-content">
             <span class="cs-topper">Mission & Vision</span>
@@ -134,17 +147,19 @@ eleventyNavigation:
                 <h2 class="cs-title">Let’s Get You On The Road Faster Than Before. Schedule Now!</h2>
             </div>
             <div class="cs-button-box">
-                <a href="" class="cs-button-solid">Schedule Our Services</a>
-                <a href="" class="cs-button-transparent">Contact Us</a>
+                <a href="/contact/" class="cs-button-solid">Schedule Our Services</a>
+                <a href="/contact/" class="cs-button-transparent">Contact Us</a>
             </div>
         </div>
     </div>
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg">
+        <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/cta-mobile.webp">
+        <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/cta-desktop.webp">
+        <source media="(max-width: 600px)" srcset="/assets/images/optimized/cta-mobile.jpg">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg">
-        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg" alt="mechanic" width="1280" height="568">
+        <source media="(min-width: 601px)" srcset="/assets/images/optimized/cta-desktop.jpg">
+        <img loading="lazy" decoding="async" src="/assets/images/optimized/cta-desktop.jpg" alt="Mechanic working on a performance vehicle" width="1600" height="650">
     </picture>
 </section>
                                 
@@ -162,52 +177,52 @@ eleventyNavigation:
             <ul class="cs-faq-group">
                 <!-- Active class added as default -->
                 <li class="cs-faq-item active">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="true" aria-controls="about-faq-answer-1">
                         <span class="cs-button-text">
                             What types of performance upgrades do you offer?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="about-faq-answer-1">
                         We offer a variety of upgrades, including performance exhaust systems, cold air intakes, superchargers, suspension kits, and brake upgrades. Whether you're looking to improve horsepower, handling, or aesthetics, we have options tailored to your vehicle’s needs.   
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="about-faq-answer-2">
                         <span class="cs-button-text">
                             Do I need to schedule an appointment for performance modifications?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="about-faq-answer-2">
                         Yes, we recommend scheduling an appointment to ensure we have the right parts and time available for your modifications. You can give us a call to reserve a spot.
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="about-faq-answer-3">
                         <span class="cs-button-text">
                             How do I know which performance parts are right for my Vehicle?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="about-faq-answer-3">
                         Our team is happy to help you choose the right upgrades based on your goals—whether that’s increasing speed, improving handling, or enhancing aesthetics. We'll work with you to find the best parts that suit your driving style and budget.
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="about-faq-answer-4">
                         <span class="cs-button-text">
                             Can I get an estimate before committing to a service?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="about-faq-answer-4">
                         Absolutely! We provide free, no-obligation estimates for all performance modifications. Simply let us know what you're interested in, and we'll provide you with a detailed breakdown of the costs.
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="about-faq-answer-5">
                         <span class="cs-button-text">
                             Do you offer warranties on performance parts?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="about-faq-answer-5">
                         Yes, many of our performance parts come with manufacturer warranties. Additionally, we stand behind our work and offer a satisfaction guarantee on all installations. Be sure to ask about warranty details when you purchase your parts.  
                     </p>
                 </li>
@@ -217,12 +232,13 @@ eleventyNavigation:
 
 
     <script>
-    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+    const faqItems = Array.from(document.querySelectorAll('#contact-1333 .cs-faq-item'));
         for (const item of faqItems) {
-            const onClick = () => {
-            item.classList.toggle('active')
-        }
-        item.addEventListener('click', onClick)
+            const button = item.querySelector('.cs-button');
+            button.addEventListener('click', () => {
+                const isActive = item.classList.toggle('active');
+                button.setAttribute('aria-expanded', String(isActive));
+            });
         }
      </script>
 </section>  

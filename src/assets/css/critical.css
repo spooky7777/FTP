@@ -177,7 +177,7 @@
 /* Large Desktop - 1600px - Prallax Effect */
 @media only screen and (min-width: 100rem) {
   #hero-1159 .cs-background {
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg");
+    background: url("/assets/images/optimized/garage-desktop.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

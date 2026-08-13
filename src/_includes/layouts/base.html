@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{{ description }}">
-        <meta name="keywords" content="">
+        {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
         <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
 
         <!--Social Media Display-->
@@ -16,8 +16,17 @@
         <meta property="og:description" content="{{ description }}"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
-        <meta property="og:image" content="/assets/images/logo-small.png"/>
-        <meta property="og:image:secure_url" content="/assets/images/logo-small.png"/>
+        <meta property="og:site_name" content="{{ client.name }}"/>
+        <meta property="og:locale" content="en_US"/>
+        <meta property="og:image" content="{{ client.domain }}{{ socialImage or client.socialImage }}"/>
+        <meta property="og:image:secure_url" content="{{ client.domain }}{{ socialImage or client.socialImage }}"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:image:alt" content="Full Throttle Performance auto shop"/>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="{{ client.domain }}{{ socialImage or client.socialImage }}">
 
         <!--Favicons-->
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
@@ -28,13 +37,14 @@
         <meta name="theme-color" content="#ffffff">
 
         <!-- Preloads -->
-        <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
+        <link rel="preload" as="image" href="/assets/svgs/full.svg">
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-900.woff2" crossorigin>
 
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
-        {% if preloadImg != '' %}
-            <link rel="preload" as="image" href="{{ preloadImg }}"/>
+        {% if preloadImg %}
+            <link rel="preload" as="image" href="{{ preloadImg }}"{% if preloadImgMobile %} imagesrcset="{{ preloadImgMobile }} 750w, {{ preloadImg }} 1920w" imagesizes="100vw"{% endif %} fetchpriority="high">
         {% endif %}
 
         <!-- Sitewide Stylesheets and Scripts -->
@@ -49,7 +59,7 @@
     </head>
     <body>
         <!--Screen reader skip main nav-->
-        <a class="skip" aria-label="skip to main content" href="#main" tabindex="1">Click To Skip To Main Content</a>
+        <a class="skip" href="#main">Skip to main content</a>
 
         {% include "components/header.html" %}
         <main id="main">

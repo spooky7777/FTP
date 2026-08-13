@@ -7,8 +7,8 @@
     <div class="cs-container">                        
         <!-- Logo Group -->
         <div class="cs-logo-group">
-            <a aria-label="go back to home" class="cs-logo" href="">
-                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/full.svg" alt="logo" width="250" height="100">
+            <a aria-label="Full Throttle Performance home" class="cs-logo" href="/">
+                <img class="cs-logo-img" loading="lazy" decoding="async" src="/assets/svgs/full.svg" alt="Full Throttle Performance" width="250" height="100">
             </a>
             <p class="cs-text">
                 At Full Throttle Performance, we specialize in high-quality tuning and upgrades to take your ride to the next level. Speed, power, and precision – we’ve got you covered.
@@ -20,31 +20,33 @@
                 <span class="cs-header">Contact</span>
             </li>
             <li class="cs-nav-li">
-                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/phone-stroke.svg" alt="phone" width="24" height="24">
-                <a class="cs-nav-link cs-phone" href="tel:317-938-3587">(317) 938-3587
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/icons/phone.svg" alt="" width="24" height="24">
+                <a class="cs-nav-link cs-phone" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}
                 </a>
             </li>
             <li class="cs-nav-li">
-                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/email-stroke.svg" alt="email" width="24" height="24">
-                <a class="cs-nav-link cs-email" href="mailto:sales@fullthrottleperformance.com.com">sales@fullthrottleperformance.com</a>
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/icons/email.svg" alt="" width="24" height="24">
+                <a class="cs-nav-link cs-email" href="mailto:{{ client.email }}">{{ client.email }}</a>
             </li>
             <li class="cs-nav-li">
-                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/pin-stroke.svg" alt="pin" width="24" height="24">
-                <a class="cs-nav-link cs-address" href="" target="_blank" rel="noopener">
-                   4444 Decatur Blvd STE 400 <br> Indianapolis, IN 46241
+                <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/icons/pin.svg" alt="" width="24" height="24">
+                <a class="cs-nav-link cs-address" href="{{ client.address.mapLink }}" target="_blank" rel="noopener noreferrer">
+                   {{ client.address.lineOne }} <br> {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}
                 </a>
             </li>
         </ul>
     </div>
     <div class="cs-bottom">
-        <span class="cs-copyright">© Copyright 2025 - <a class="cs-copyright-link" href="">Full Throttle Performance</a></span>
+        <span class="cs-copyright">&copy; Copyright {% year %} - <a class="cs-copyright-link" href="/">Full Throttle Performance</a></span>
     </div>
     <!--Background Image-->
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/wheels.jpg">
+        <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/footer-mobile.webp">
+        <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/footer-desktop.webp">
+        <source media="(max-width: 600px)" srcset="/assets/images/optimized/footer-mobile.jpg">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/wheels.jpg">
-        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/wheels.jpg" alt="wheels" width="1280" height="568">
+        <source media="(min-width: 601px)" srcset="/assets/images/optimized/footer-desktop.jpg">
+        <img loading="lazy" decoding="async" src="/assets/images/optimized/footer-desktop.jpg" alt="" width="1600" height="650" aria-hidden="true">
     </picture>
 </footer>

@@ -6,8 +6,8 @@ author: Code Stitch
 date: 2023-06-08T15:26:46.705Z
 tags:
     - post
-image: /assets/images/blog/landing.jpg
-imageAlt: Kitchen
+image: /assets/images/optimized/gallery-7-desktop.jpg
+imageAlt: Supercharged performance engine
 ---
 
 ## Lacerans aliter tetigit praeterea rite

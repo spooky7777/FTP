@@ -1,8 +1,12 @@
 ---
-title: 'Contact | Full Throttle Performance'
-description: 'Meta description for the page'
-preloadImg: ''
+title: 'Contact Our Auto Shop | Full Throttle Performance'
+description: 'Contact Full Throttle Performance in Indianapolis for performance upgrades, repairs, estimates, scheduling, and service questions. Call, email, or visit our shop.'
+preloadImg: '/assets/images/optimized/banner-desktop.webp'
+preloadImgMobile: '/assets/images/optimized/banner-mobile.webp'
 permalink: 'contact/'
+sitemap:
+    lastmod: 2026-08-13
+    priority: 0.8
 eleventyNavigation:
     key: Contact Us
     order: 600
@@ -12,7 +16,9 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/contact-critical.css">
+    <link rel="stylesheet" href="/assets/css/contact.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="/assets/css/contact.css"></noscript>
 {% endblock %}
 
 {% block body %}
@@ -23,19 +29,21 @@ eleventyNavigation:
 
 <div id="banner-1106">
     <div class="cs-container">
-        <span class="cs-int-title">Contact Us</span>
+        <h1 class="cs-int-title">Contact Us</h1>
         <div class="cs-breadcrumbs">
-            <a href="" class="cs-link">Home</a>
-            <a href="" class="cs-link cs-active">Contact</a>
+            <a href="/" class="cs-link">Home</a>
+            <span class="cs-link cs-active" aria-current="page">Contact</span>
         </div>
     </div>
     <!--Background Image-->
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
+        <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.webp">
+        <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.webp">
+        <source media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.jpg">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
-        <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg" alt="mechanic" width="1280" height="568" aria-hidden="true">
+        <source media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.jpg">
+        <img decoding="async" src="/assets/images/optimized/banner-desktop.jpg" alt="" width="1600" height="560" aria-hidden="true" fetchpriority="high">
     </picture>
 </div>
                                 
@@ -48,39 +56,42 @@ eleventyNavigation:
     <div class="cs-container">
         <picture class="cs-picture">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/images/img1.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/contact-shop-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/contact-shop-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/contact-shop-mobile.jpg">
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="/assets/images/img1.jpg">
-            <img loading="lazy" decoding="async" src="/assets/images/img1.jpg" alt="friends" width="904" height="754">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/contact-shop-desktop.jpg">
+            <img loading="lazy" decoding="async" src="/assets/images/optimized/contact-shop-desktop.jpg" alt="Full Throttle Performance shop exterior" width="680" height="600">
         </picture>
         <div class="cs-right">
-            <div class="cs-content">
-            </div>
-            <section id="cs-contact-490">
+            <section id="cs-contact-490" aria-labelledby="contact-information-title">
                 <div class="cs-container">
                     <!-- Contact Info -->
                     <div class="cs-content">
                         <span class="cs-topper">Contact Us</span>
-                        <h2 class="cs-title">Contact Information</h2>
+                        <h2 class="cs-title" id="contact-information-title">Contact Information</h2>
                         <p class="cs-text">
                             We are here to help you with all your performance needs. Whether you have questions about our products, need assistance, or want to learn more about our services, feel free to reach out to us.
                         </p>
                         
                         <!--Address-->
                         <span class="cs-header">Address</span>
-                        <a href="" class="cs-link">
-                            4444 Decatur Blvd STE 400, <br>Indianapolis, IN 46241
+                        <a href="{{ client.address.mapLink }}" class="cs-link" target="_blank" rel="noopener noreferrer">
+                            {{ client.address.lineOne }}, <br>{{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}
                         </a>
                         <!--Email-->
                         <span class="cs-header">Email</span>
-                        <a href="mailto:sales@fullthrottleperformance.com" class="cs-link">sales@fullthrottleperformance.com</a>
+                        <a href="mailto:{{ client.email }}" class="cs-link">{{ client.email }}</a>
                         <!--Phone-->
                         <span class="cs-header">Phone</span>
-                        <a href="tel:317-938-3587" class="cs-link">(317)-938-3587</a>
+                        <a href="tel:{{ client.phoneForTel }}" class="cs-link">{{ client.phoneFormatted }}</a>
             
                     
-                        </div>
                     </div>
+                </div>
+            </section>
+        </div>
+    </div>
 </section>
                                                         
                                 

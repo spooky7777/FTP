@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build:clean": "del-cli ./public --force",
         "build:less": "less-watch-compiler --run-once ./src/assets/less ./src/assets/css",
+        "build:critical": "node ./scripts/build-critical.js",
         "watch:less": "less-watch-compiler ./src/assets/less ./src/assets/css",
         "watch:eleventy": "cross-env ELEVENTY_ENV=DEV eleventy --serve",
         "build:eleventy": "cross-env ELEVENTY_ENV=PROD eleventy",

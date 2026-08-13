@@ -1,7 +1,9 @@
 ---
-title: 'Blog | Code Stitch Web Designs'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/cabinets2.jpg'
+title: 'Blog | Full Throttle Performance'
+description: 'Automotive performance articles and updates from Full Throttle Performance in Indianapolis.'
+preloadImg: '/assets/images/optimized/banner-desktop.webp'
+preloadImgMobile: '/assets/images/optimized/banner-mobile.webp'
+noindex: true
 permalink: 'blog/'
 eleventyNavigation:
     key: Blog
@@ -22,9 +24,11 @@ eleventyNavigation:
     <section id="int-hero">
         <h1 id="home-h">Blog</h1>
         <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/optimized/banner-desktop.jpg" alt="" fetchpriority="high" width="1600" height="560">
         </picture>
     </section>
 
@@ -40,7 +44,7 @@ eleventyNavigation:
             <!-- ============================================ -->
 
             {% if collections.post | length == 0 %}
-                <h1>No Recent Posts</h1>
+                <h2>No Recent Posts</h2>
             {% else %}
                 {%- for post in collections.post | reverse -%}
                     <article class="recent-articles">
@@ -60,7 +64,8 @@ eleventyNavigation:
                                 <picture class="blog-author-img">
                                     <img
                                     src="/assets/svgs/profile.svg"
-                                    alt="house"
+                                    alt=""
+                                    aria-hidden="true"
                                     width="32"
                                     height="32"
                                     decoding="async"/>

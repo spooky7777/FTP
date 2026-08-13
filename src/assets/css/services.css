@@ -49,10 +49,10 @@
     justify-content: center;
     align-items: center;
   }
-  #banner-1106 .cs-link:last-of-type {
+  #banner-1106 .cs-link:last-child {
     /* remove the chevron on the last list item */
   }
-  #banner-1106 .cs-link:last-of-type::after {
+  #banner-1106 .cs-link:last-child::after {
     display: none;
   }
   #banner-1106 .cs-link:after {
@@ -61,7 +61,7 @@
     width: 0.4375rem;
     height: 0.75rem;
     margin: 0 1rem;
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/white-chev.svg");
+    background: url("/assets/svgs/icons/white-chev.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

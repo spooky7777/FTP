@@ -1,13 +1,20 @@
 ---
-title: 'Services | Full Throttle Performance'
-description: 'Description for <meta> and OG tags'
+title: 'Auto Performance Services | Full Throttle Performance'
+description: 'Explore custom exhaust work, brake service, engine swaps, suspension, forced induction, wheels and tires, clutch upgrades, and general auto repair in Indianapolis.'
+preloadImg: '/assets/images/optimized/banner-desktop.webp'
+preloadImgMobile: '/assets/images/optimized/banner-mobile.webp'
 permalink: 'services/'
+sitemap:
+  lastmod: 2026-08-13
+  priority: 0.9
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="/assets/css/services.css">
+<link rel="stylesheet" href="/assets/css/services-critical.css">
+<link rel="stylesheet" href="/assets/css/services.css" media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link rel="stylesheet" href="/assets/css/services.css"></noscript>
 {% endblock %}
 
 {% block body %}
@@ -18,19 +25,21 @@ permalink: 'services/'
 
 <div id="banner-1106">
   <div class="cs-container">
-      <span class="cs-int-title">Services</span>
+      <h1 class="cs-int-title">Services</h1>
       <div class="cs-breadcrumbs">
-          <a href="" class="cs-link">Home</a>
-          <a href="" class="cs-link cs-active">Services</a>
+          <a href="/" class="cs-link">Home</a>
+          <span class="cs-link cs-active" aria-current="page">Services</span>
       </div>
   </div>
   <!--Background Image-->
   <picture class="cs-background">
       <!--Mobile Image-->
-      <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
+      <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.webp">
+      <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.webp">
+      <source media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.jpg">
       <!--Tablet and above Image-->
-      <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg">
-      <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic-20.jpg" alt="mechanic" width="1280" height="568" aria-hidden="true">
+      <source media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.jpg">
+      <img decoding="async" src="/assets/images/optimized/banner-desktop.jpg" alt="" width="1600" height="560" aria-hidden="true" fetchpriority="high">
   </picture>
 </div>
 
@@ -52,21 +61,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img13.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-1-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-1-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-1-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img13.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-1-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic30.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-1-desktop.jpg"
+                  alt="Custom performance exhaust system"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Custom Exhaust Work</h3>
@@ -78,21 +84,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img14.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-2-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-2-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-2-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img14.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-2-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic33.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-2-desktop.jpg"
+                  alt="High-performance brake assembly"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Brake Services</h3>
@@ -105,21 +108,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img15.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-3-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-3-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-3-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img15.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-3-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic32.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-3-desktop.jpg"
+                  alt="Modified engine installed in a vehicle"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Engine Swaps</h3>
@@ -131,21 +131,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img16.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-4-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-4-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-4-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img16.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-4-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic31.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-4-desktop.jpg"
+                  alt="Performance suspension coilovers"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Suspension Services</h3>
@@ -157,21 +154,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img8.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-5-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-5-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-5-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img8.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-5-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic30.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-5-desktop.jpg"
+                  alt="Supercharged performance engine"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Forced Induction</h3>
@@ -183,21 +177,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img17.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-6-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-6-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-6-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img17.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-6-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic33.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-6-desktop.jpg"
+                  alt="Custom wheels and low-profile tires"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Wheels & Tires</h3>
@@ -209,21 +200,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img18.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-7-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-7-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-7-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img18.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-7-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic32.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-7-desktop.jpg"
+                  alt="Performance clutch installation"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">Clutch Upgrades</h3>
@@ -235,21 +223,18 @@ permalink: 'services/'
         <li class="cs-item">
           <picture class="cs-picture">
             <!--Mobile Image-->
-            <source
-                  media="(max-width: 600px)"
-                  srcset="/assets/Images/img19.jpg">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/service-8-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/service-8-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/service-8-mobile.jpg">
             <!--Tablet and above Image-->
-            <source
-                  media="(min-width: 601px)"
-                  srcset="/assets/Images/img19.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/service-8-desktop.jpg">
             <img
                   loading="lazy"
                   decoding="async"
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic31.jpg"
-                  alt="mechanic"
-                  width="413"
-                  height="240"
-                  aria-hidden="true">
+                  src="/assets/images/optimized/service-8-desktop.jpg"
+                  alt="Mechanic performing an engine repair"
+                  width="960"
+                  height="558">
           </picture>
           <div class="cs-info">
             <h3 class="cs-h3">General Repairs</h3>
@@ -263,4 +248,4 @@ permalink: 'services/'
 </section>
 {% include 'components/cta.html' %}
 
-{% endblock %}                               
+{% endblock %}

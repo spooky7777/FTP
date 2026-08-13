@@ -9,9 +9,9 @@
             "@type": "Article",
             {% if title %}"headline": "{{ title }}",{% endif %}
             {% if image %}
-                "image": ["{{ image }}"],
+                "image": ["{{ client.domain }}{{ image }}"],
             {% endif %}
-            {% if date %}"datePublished": "{{ date | postDate }}",{% endif %}
+            {% if date %}"datePublished": "{{ date | dateToISOString }}",{% endif %}
             {% if client.name %}
                 "publisher": {
                     "@type": "Organization",
@@ -26,9 +26,8 @@
                     }
                 ],
             {% endif %}
-            {% if description %}"articleBody": "{{ description | safe }}",{% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if tags %}"articleSection": "{{ tags }}"{% endif %}
+            {% if description %}"description": "{{ description }}",{% endif %}
+            "url": "{{ client.domain }}{{ page.url }}"
         }
     </script>
 {% endblock %}
@@ -40,9 +39,11 @@
 
     <section id="int-hero">
         <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/optimized/banner-desktop.jpg" alt="" fetchpriority="high" width="1600" height="560">
         </picture>
     </section>
 
@@ -71,7 +72,8 @@
                         <picture class="blog-author-img">
                             <img
                             src="/assets/svgs/profile.svg"
-                            alt="house"
+                            alt=""
+                            aria-hidden="true"
                             width="32"
                             height="32"
                             decoding="async">

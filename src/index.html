@@ -1,9 +1,13 @@
 ---
-title: "Full Throttle Performance | Indianapolis, IN"
-description: "Meta description for the page"
-preloadImg: "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg"
+title: "Indianapolis Auto Performance | Full Throttle Performance"
+description: "Full Throttle Performance provides performance upgrades, custom exhaust work, engine swaps, suspension, brakes, wheels, tires, and general auto repair in Indianapolis."
+preloadImg: "/assets/images/optimized/garage-desktop.webp"
+preloadImgMobile: "/assets/images/optimized/garage-mobile.webp"
 permalink: "/"
 tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+sitemap:
+  lastmod: 2026-08-13
+  priority: 1.0
 eleventyNavigation:
   key: Home
   order: 100
@@ -12,34 +16,29 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css"/>
-    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/home-critical.css">
+    <link rel="stylesheet" href="/assets/css/critical.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="/assets/css/critical.css"></noscript>
 
-    <!-- Script for Netlify Identity -->
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script defer>
-        if (window.netlifyIdentity) {
-            window
-                .netlifyIdentity
-                .on('init', (user) => {
-                    if (!user) {
-                        window
-                            .netlifyIdentity
-                            .on('login', () => {
-                                document.location.href = '/admin/';
-                            });
-                    }
-                });
+    <!-- Load Netlify Identity only when a CMS invitation or recovery link requires it. -->
+    <script>
+        if (/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(window.location.hash)) {
+            const identityScript = document.createElement('script');
+            identityScript.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+            identityScript.onload = () => window.netlifyIdentity?.on('login', () => {
+                document.location.href = '/admin/';
+            });
+            document.head.appendChild(identityScript);
         }
     </script>
 
     <!-- JSON Schema Markup -->
     <script type="application/ld+json">
         {
-            "@context": "http://schema.org",
-            "@type": "LocalBusiness",
+            "@context": "https://schema.org",
+            "@type": "AutoRepair",
             "name": "{{ client.name }}",
-            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            "image": "{{ client.domain }}{{ client.socialImage }}",
             {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
             {% if client.email %}"email": "{{ client.email }}",{% endif %}
             {% if client.address %}
@@ -61,13 +60,7 @@ eleventyNavigation:
                     {% endif %}
                 },
             {% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if client.socials %}
-                "sameAs": [{% for platform, url in client.socials %}
-                        {% if not loop.first %},{% endif %}
-                        "{{ url }}"
-                    {% endfor %}]
-            {% endif %}
+            "url": "{{ client.domain }}{{ page.url }}"
         }
     </script>
 {% endblock %}
@@ -86,18 +79,20 @@ eleventyNavigation:
             <p class="cs-text">
                 Driven by passion, we specialize in transforming Mustangs into high-performance machines. From power upgrades to custom bodywork, we bring your dream Mustang to life.
             </p>
-            <a href="/services" class="cs-button-solid">Explore Services</a>
+            <a href="/services/" class="cs-button-solid">Explore Services</a>
         </div>
     </div>
 
     <!--SVG V Graphic-->
-    <img class="cs-graphic" decoding="async" src="/assets/svgs/v-graphic2.svg" alt="graphic" width="1920" height="163" aria-hidden="true" loading="lazy" >
+    <img class="cs-graphic" decoding="async" src="/assets/svgs/v-graphic2.svg" alt="" width="1920" height="163" aria-hidden="true">
 
     <!-- Background Image, also BG Image is set in CSS at 1600px wide for parallax effect -->
     <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg">
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg">
-        <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/garage.jpg" alt="garage" width="2250" height="1500" aria-hidden="true" loading="lazy">
+        <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/garage-mobile.webp">
+        <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/garage-desktop.webp">
+        <source media="(max-width: 600px)" srcset="/assets/images/optimized/garage-mobile.jpg">
+        <source media="(min-width: 601px)" srcset="/assets/images/optimized/garage-desktop.jpg">
+        <img decoding="async" src="/assets/images/optimized/garage-desktop.jpg" alt="" width="1920" height="900" aria-hidden="true" fetchpriority="high">
     </picture>
 </section>
                                 
@@ -120,17 +115,17 @@ eleventyNavigation:
             <!--Car-->
             <picture class="cs-image">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/svgs/corv.svg">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/corvette-mobile.webp">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/svgs/corv.svg">
-                <img loading="lazy" decoding="async" src="/assets/svgs/corv.svg" alt="car" width="510" height="193" aria-hidden="true">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/corvette.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/corvette.webp" alt="" width="1020" height="386" aria-hidden="true">
             </picture>
             <ul class="cs-card-group">
                 <li class="cs-item">
                     <picture class="cs-picture">
                         <img class="cs-icon"
                                 src="/assets/svgs/turbo.svg"
-                                loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
+                                loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
                     </picture>
                     <!-- Text Grouped For Flexbox-->
                     <div class="cs-text-group">
@@ -140,8 +135,8 @@ eleventyNavigation:
                 </li>
                 <li class="cs-item">
                     <picture class="cs-picture">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/brake-red.svg"
-                                loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                        <img class="cs-icon" src="/assets/svgs/icons/brakes.svg"
+                                loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
                     </picture>
                     <!-- Text Grouped For Flexbox-->
                     <div class="cs-text-group">
@@ -152,8 +147,8 @@ eleventyNavigation:
                 <li class="cs-item">
                     <picture class="cs-picture">
                         <img class="cs-icon"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/air-conditioner-red.svg"
-                                loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                                src="/assets/svgs/icons/engine.svg"
+                                loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
                     </picture>
                     <!-- Text Grouped For Flexbox-->
                     <div class="cs-text-group">
@@ -165,7 +160,7 @@ eleventyNavigation:
                     <picture class="cs-picture">
                         <img class="cs-icon"
                                 src="/assets/svgs/nit.svg" loading="lazy"
-                                decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                                decoding="async" alt="" width="33" height="38" aria-hidden="true">
                     </picture>
                     <!-- Text Grouped For Flexbox-->
                     <div class="cs-text-group">
@@ -176,8 +171,8 @@ eleventyNavigation:
                 <li class="cs-item">
                     <picture class="cs-picture">
                         <img class="cs-icon"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/alloy-wheel-red.svg" loading="lazy"
-                                decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                                src="/assets/svgs/icons/suspension.svg" loading="lazy"
+                                decoding="async" alt="" width="33" height="38" aria-hidden="true">
                     </picture>
                     <!-- Text Grouped For Flexbox-->
                     <div class="cs-text-group">
@@ -188,8 +183,8 @@ eleventyNavigation:
                 <li class="cs-item">
                     <picture class="cs-picture">
                         <img class="cs-icon"
-                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/contamination-red.svg"
-                                loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
+                                src="/assets/svgs/icons/exhaust.svg"
+                                loading="lazy" decoding="async" alt="" width="33" height="38" aria-hidden="true">
                     </picture>
                     <!-- Text Grouped For Flexbox-->
                     <div class="cs-text-group">
@@ -199,7 +194,7 @@ eleventyNavigation:
                 </li>
             </ul>
         </div>
-        <a href="/contact" class="cs-button-solid">Get In Touch</a>
+        <a href="/contact/" class="cs-button-solid">Get In Touch</a>
     </div>
 </section>
                                 
@@ -214,23 +209,27 @@ eleventyNavigation:
             <!--Top left image-->
             <picture class="cs-picture cs-picture1">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img1.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/shop-exterior-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/shop-exterior-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/shop-exterior-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img1.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img1.jpg" alt="appliance" width="630" height="390">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/shop-exterior-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/shop-exterior-desktop.jpg" alt="Full Throttle Performance shop exterior" width="680" height="510">
             </picture>
             <!--Bottom right image-->
             <picture class="cs-picture cs-picture2">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img2.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/engine-detail-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/engine-detail-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/engine-detail-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img2.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img2.jpg" alt="appliance" width="461" height="300">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/engine-detail-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/engine-detail-desktop.jpg" alt="Performance engine at Full Throttle Performance" width="680" height="510">
             </picture>
             <!--Splash Graphic-->
-            <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/splash-grey.svg" alt="splash" width="1154" height="505" aria-hidden="true">
+            <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="/assets/svgs/icons/splash-grey.svg" alt="" width="1154" height="505" aria-hidden="true">
             <!--Tire Mark-->
-            <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-mark.svg" alt="tire mark" width="1085" height="322" aria-hidden="true">
+            <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="/assets/svgs/icons/tire-mark.svg" alt="" width="1085" height="322" aria-hidden="true">
             <div class="cs-box">
                 <span class="cs-number">15+</span>
                 <span class="cs-desc">Years In Business</span>
@@ -249,7 +248,7 @@ eleventyNavigation:
                 <li class="cs-li">Committed to exceptional quality and standards</li>
                 <li class="cs-li">45+ Years of Experience</li>
             </ul>
-            <a href="/about" class="cs-button-solid">See More</a>
+            <a href="/about/" class="cs-button-solid">See More</a>
         </div>
     </div>
 </section>
@@ -266,17 +265,19 @@ eleventyNavigation:
                 <h2 class="cs-title">Let’s Get You On The Road Faster. Schedule Now!</h2>
             </div>
             <div class="cs-button-box">
-                <a href="/contact" class="cs-button-solid">Schedule Our Services</a>
-                <a href="/contact" class="cs-button-transparent">Contact Us</a>
+                <a href="/contact/" class="cs-button-solid">Schedule Our Services</a>
+                <a href="/contact/" class="cs-button-transparent">Contact Us</a>
             </div>
         </div>
     </div>
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg">
+        <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/cta-mobile.webp">
+        <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/cta-desktop.webp">
+        <source media="(max-width: 600px)" srcset="/assets/images/optimized/cta-mobile.jpg">
         <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg">
-        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic3.jpg" alt="mechanic" width="1280" height="568">
+        <source media="(min-width: 601px)" srcset="/assets/images/optimized/cta-desktop.jpg">
+        <img loading="lazy" decoding="async" src="/assets/images/optimized/cta-desktop.jpg" alt="Mechanic working on a performance vehicle" width="1600" height="650">
     </picture>
 </section>
                                 
@@ -290,7 +291,7 @@ eleventyNavigation:
             <!--Stat Group-->
             <div class="cs-stat">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/why-icon.svg" alt="icon" width="48" height="48" aria-hidden="true">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/icons/why.svg" alt="" width="48" height="48" aria-hidden="true">
                 </picture>
                 <div class="cs-flex">
                     <span class="cs-number">500+</span>
@@ -301,10 +302,10 @@ eleventyNavigation:
             <!--Car-->
             <picture class="cs-picture cs-picture1">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/svgs/cobra.svg">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/cobra-mobile.webp">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/svgs/cobra.svg">
-                <img loading="lazy" decoding="async" src="/assets/svgs/cobra.svg" alt="appliance" width="858" height="477">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/cobra.webp">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/cobra.webp" alt="Red Ford Mustang" width="1000" height="556">
             </picture>
 
             <!--Person, to make your own crop of a person, use https://www.remove.bg/ to remove the background of any image -->
@@ -312,12 +313,12 @@ eleventyNavigation:
                 <!--Mobile Image-->
                 <source media="(max-width: 600px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" >
                 <source media="(min-width: 601px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-                <img loading="lazy" decoding="async" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="appliance" width="438" height="588">
+                <img loading="lazy" decoding="async" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="438" height="588" aria-hidden="true">
             </picture>
 
             <!--Stripe background-->
             <div class="cs-graphic-wrapper">
-                <img class="cs-graphic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-mark.svg" alt="tire mark" width="1469" height="626" aria-hidden="true">
+                <img class="cs-graphic" loading="lazy" decoding="async" src="/assets/svgs/icons/tire-mark.svg" alt="" width="1469" height="626" aria-hidden="true">
             </div>
 
         </div>
@@ -330,7 +331,7 @@ eleventyNavigation:
             <ul class="cs-list">
                 <li class="cs-li">
                     <picture class="cs-li-picture">
-                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/247.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                        <img class="cs-li-icon" aria-hidden="true" src="/assets/svgs/icons/support.svg" decoding="async" alt="" width="32" height="32" loading="lazy">
                     </picture>
                     <div class="cs-flex">
                         <h3 class="cs-h3">Daily Support</h3>
@@ -341,7 +342,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-li">
                     <picture class="cs-li-picture">
-                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/members.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                        <img class="cs-li-icon" aria-hidden="true" src="/assets/svgs/icons/members.svg" decoding="async" alt="" width="32" height="32" loading="lazy">
                     </picture>
                     <div class="cs-flex">
                         <h3 class="cs-h3">Trusted Professionals</h3>
@@ -352,7 +353,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-li">
                     <picture class="cs-li-picture">
-                        <img class="cs-li-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/clock-zoom.svg" decoding="async" alt="icon" width="32" height="32" loading="lazy">
+                        <img class="cs-li-icon" aria-hidden="true" src="/assets/svgs/icons/turnaround.svg" decoding="async" alt="" width="32" height="32" loading="lazy">
                     </picture>
                     <div class="cs-flex">
                         <h3 class="cs-h3">Fast Turnaround</h3>
@@ -380,73 +381,93 @@ eleventyNavigation:
         <div class="cs-gallery">
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img3.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-3-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-3-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-3-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img3.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img3.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-3-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-3-desktop.jpg" alt="Vehicle receiving service inside the shop" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img4.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-4-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-4-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-4-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img4.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img4.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-4-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-4-desktop.jpg" alt="Performance cars outside Full Throttle Performance" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img6.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-6-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-6-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-6-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img6.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img6.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-6-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-6-desktop.jpg" alt="Modified performance engine bay" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img5.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-5-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-5-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-5-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img5.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img5.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-5-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-5-desktop.jpg" alt="Customer cars outside the performance shop" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img7.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-7-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-7-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-7-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img7.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img7.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-7-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-7-desktop.jpg" alt="Supercharged performance engine" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img8.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-8-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-8-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-8-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img8.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img8.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-8-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-8-desktop.jpg" alt="High-performance engine assembly" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img9.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-9-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-9-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-9-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img9.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img9.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-9-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-9-desktop.jpg" alt="Modern performance engine bay" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img10.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-10-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-10-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-10-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img10.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img10.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-10-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-10-desktop.jpg" alt="Classic Chevrolet Corvette" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img11.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-11-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-11-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-11-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img11.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img11.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-11-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-11-desktop.jpg" alt="Classic V8 engine" width="640" height="760">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/img12.jpg">
+                <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-12-mobile.webp">
+                <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-12-desktop.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/optimized/gallery-12-mobile.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/img12.jpg">
-                <img loading="lazy" decoding="async" src="/assets/images/img12.jpg" alt="picture" width="480" height="549">
+                <source media="(min-width: 601px)" srcset="/assets/images/optimized/gallery-12-desktop.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/optimized/gallery-12-desktop.jpg" alt="Performance front grille and intercooler" width="640" height="760">
             </picture>
         </div>
     </div>
@@ -464,53 +485,53 @@ eleventyNavigation:
             <ul class="cs-faq-group">
                 <!-- Active class added as default -->
                 <li class="cs-faq-item active">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="true" aria-controls="home-faq-answer-1">
                         <span class="cs-button-text">
                             What types of performance upgrades do you offer?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="home-faq-answer-1">
                         We offer a variety of upgrades, including performance exhaust systems, cold air intakes, superchargers, suspension kits, and brake upgrades. Whether you're looking to improve horsepower, handling, or aesthetics, we have options tailored to your vehicle’s needs.   
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="home-faq-answer-2">
                         <span class="cs-button-text">
                             Do I need to schedule an appointment for performance modifications?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="home-faq-answer-2">
                         Yes, we recommend scheduling an appointment to ensure we have the right parts and time available for your modifications. You can book an appointment online or give us a call to reserve a spot.
 
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="home-faq-answer-3">
                         <span class="cs-button-text">
                             How do I know which performance parts are right for my Vehicle?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="home-faq-answer-3">
                         Our team is happy to help you choose the right upgrades based on your goals—whether that’s increasing speed, improving handling, or enhancing aesthetics. We'll work with you to find the best parts that suit your driving style and budget.
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="home-faq-answer-4">
                         <span class="cs-button-text">
                             Can I get an estimate before committing to a service?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="home-faq-answer-4">
                         Absolutely! We provide free, no-obligation estimates for all performance modifications. Simply let us know what you're interested in, and we'll provide you with a detailed breakdown of the costs.
                     </p>
                 </li>
                 <li class="cs-faq-item">
-                    <button class="cs-button">
+                    <button class="cs-button" aria-expanded="false" aria-controls="home-faq-answer-5">
                         <span class="cs-button-text">
                             Do you offer warranties on performance parts?
                         </span>
                     </button>
-                    <p class="cs-item-p">
+                    <p class="cs-item-p" id="home-faq-answer-5">
                         Yes, many of our performance parts come with manufacturer warranties. Additionally, we stand behind our work and offer a satisfaction guarantee on all installations. Be sure to ask about warranty details when you purchase your parts.  
                     </p>
                 </li>
@@ -520,12 +541,13 @@ eleventyNavigation:
 
 
     <script>
-    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+    const faqItems = Array.from(document.querySelectorAll('#contact-1333 .cs-faq-item'));
         for (const item of faqItems) {
-            const onClick = () => {
-            item.classList.toggle('active')
-        }
-        item.addEventListener('click', onClick)
+            const button = item.querySelector('.cs-button');
+            button.addEventListener('click', () => {
+                const isActive = item.classList.toggle('active');
+                button.setAttribute('aria-expanded', String(isActive));
+            });
         }
      </script>
 </section>                        

@@ -1,0 +1,48 @@
+---
+title: 'Page Not Found | Full Throttle Performance'
+description: 'The page you requested could not be found. Return to Full Throttle Performance or contact our Indianapolis auto performance shop.'
+permalink: '/404.html'
+noindex: true
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/contact-critical.css">
+    <link rel="stylesheet" href="/assets/css/contact.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="/assets/css/contact.css"></noscript>
+{% endblock %}
+
+{% block body %}
+    <div id="banner-1106">
+        <div class="cs-container">
+            <h1 class="cs-int-title">Page Not Found</h1>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <span class="cs-link cs-active" aria-current="page">404</span>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <source type="image/webp" media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.webp">
+            <source type="image/webp" media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.webp">
+            <source media="(max-width: 600px)" srcset="/assets/images/optimized/banner-mobile.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/optimized/banner-desktop.jpg">
+            <img decoding="async" src="/assets/images/optimized/banner-desktop.jpg" alt="" width="1600" height="560" aria-hidden="true">
+        </picture>
+    </div>
+
+    <section id="cs-contact-490" aria-labelledby="not-found-title">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">404 Error</span>
+                <h2 class="cs-title" id="not-found-title">That Page Is Off the Road</h2>
+                <p class="cs-text">The link may be outdated or the page may have moved. Return to the homepage, view our services, or call us for help.</p>
+                <a href="/" class="cs-button-solid">Return Home</a>
+                <a href="/services/" class="cs-button-solid">View Services</a>
+                <span class="cs-header">Phone</span>
+                <a href="tel:{{ client.phoneForTel }}" class="cs-link">{{ client.phoneFormatted }}</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

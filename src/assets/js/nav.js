@@ -15,6 +15,7 @@ function toggleMenu() {
     navbarMenu.classList.toggle("cs-active");
     bodyElement.classList.toggle("cs-open");
     toggleAriaExpanded(hamburgerMenu);
+    hamburgerMenu.setAttribute("aria-label", hamburgerMenu.getAttribute("aria-expanded") === "true" ? "Close navigation menu" : "Open navigation menu");
 }
 
 // Add click event listener to the hamburger menu

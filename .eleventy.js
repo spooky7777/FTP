@@ -78,7 +78,15 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/assets", {
         filter: [
             "**/*",
-            "!**/*.js"
+            "!**/*.js",
+            "!**/*.less",
+            "!**/*.woff",
+            "!images/stock/**",
+            "!images/img*.jpg",
+            "!images/img*.JPG",
+            "!images/portfolio/**",
+            "!svgs/cobra.svg",
+            "!svgs/corv.svg"
         ]
     });
     eleventyConfig.addPassthroughCopy("./src/admin");
@@ -98,6 +106,12 @@ module.exports = function (eleventyConfig) {
      *  https://moment.github.io/luxon/api-docs/index.html#datetime
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+    eleventyConfig.addFilter("dateToISOString", (value) => new Date(value).toISOString());
+
+    // Keep intentionally non-public starter/CMS content out of search sitemaps.
+    eleventyConfig.addCollection("publicSitemap", (collectionApi) =>
+        collectionApi.getFilteredByTag("sitemap").filter((item) => !item.data.noindex)
+    );
     /**=====================================================================
                                     END FILTERS
     =======================================================================*/
